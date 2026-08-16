@@ -1,0 +1,4 @@
+build/
+.test-backup/
+.DS_Store
+*.log

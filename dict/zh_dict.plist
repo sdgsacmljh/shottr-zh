@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>exact</key>
+	<dict>
+		<key>1 day</key>
+		<string>1 天</string>
+		<key>1. Go to System Settings → Keyboard → Keyboard Shortcuts</key>
+		<string>1. 打开 系统设置 → 键盘 → 键盘快捷键</string>
+		<key>2. Select "Screenshots" and uncheck checkboxes for system shortcuts</key>
+		<string>2. 选择"截图"，取消勾选系统快捷键</string>
+		<key>3. Put ⌘⇧3 into Fullscreen and ⌘⇧4 into Area fields below</key>
+		<string>3. 将 ⌘⇧3 填入下方"全屏"栏，⌘⇧4 填入"区域"栏</string>
+		<key>30 days</key>
+		<string>30 天</string>
+		<key>7 days</key>
+		<string>7 天</string>
+		<key>About</key>
+		<string>关于</string>
+		<key>Accept</key>
+		<string>接受</string>
+		<key>Access key</key>
+		<string>Access Key</string>
+		<key>Account</key>
+		<string>账户</string>
+		<key>Action when hiding with Esc</key>
+		<string>按 Esc 隐藏时的操作</string>
+		<key>Activate</key>
+		<string>激活</string>
+		<key>Activate Shottr</key>
+		<string>激活 Shottr</string>
+		<key>Activate the app</key>
+		<string>激活应用</string>
+		<key>Active window screenshot</key>
+		<string>活动窗口截图</string>
+		<key>Add</key>
+		<string>添加</string>
+		<key>Add Capture</key>
+		<string>新建截图</string>
+		<key>Add Capture (⌘A)</key>
+		<string>新建截图（⌘A)</string>
+		<key>Add Gradient Background</key>
+		<string>添加渐变背景</string>
+		<key>Adding Capture is only available after the license activation.</key>
+		<string>添加截图需先激活许可证。</string>
+		<key>Advanced</key>
+		<string>高级</string>
+		<key>After Area Crop, show</key>
+		<string>区域截图后显示</string>
+		<key>After screenshot</key>
+		<string>截图后</string>
+		<key>Allow collection</key>
+		<string>允许收集</string>
+		<key>Always on top</key>
+		<string>始终置顶</string>
+		<key>Amazon (AWS)</key>
+		<string>Amazon（AWS）</string>
+		<key>Annotate</key>
+		<string>标注</string>
+		<key>Any window screenshot</key>
+		<string>任意窗口截图</string>
+		<key>Apply</key>
+		<string>应用</string>
+		<key>Arabic</key>
+		<string>阿拉伯语</string>
+		<key>Arabic (Najdi)</key>
+		<string>阿拉伯语（纳季迪）</string>
+		<key>Area Capture</key>
+		<string>区域截图</string>
+		<key>Area screenshot</key>
+		<string>区域截图</string>
+		<key>Arrow</key>
+		<string>箭头</string>
+		<key>Arrow (A)</key>
+		<string>箭头 (A)</string>
+		<key>Australian English</key>
+		<string>英语（澳大利亚）</string>
+		<key>Auto</key>
+		<string>自动</string>
+		<key>Auto (PNG/JPEG)</key>
+		<string>自动（PNG/JPEG）</string>
+		<key>Automatic mode optimizes size and quality based on the image content. If the screenshot has gradients, noise or photographs, it'll be saved as Jpeg. If the screenshot contains text and flat colors, it will be saved as PNG.</key>
+		<string>自动模式会根据图像内容优化大小与质量：若截图包含渐变、噪点或照片，将保存为 JPEG；若包含文字和纯色，将保存为 PNG。</string>
+		<key>Automatically (click outside)</key>
+		<string>自动（点击外部）</string>
+		<key>Autostart</key>
+		<string>自动启动</string>
+		<key>Backdrop</key>
+		<string>背景</string>
+		<key>Backdrop (K)</key>
+		<string>背景 (K)</string>
+		<key>Blur</key>
+		<string>模糊</string>
+		<key>Blur Text</key>
+		<string>模糊文字</string>
+		<key>Blur/Erase</key>
+		<string>模糊/擦除</string>
+		<key>Blur/Erase (B)</key>
+		<string>模糊/擦除 (B)</string>
+		<key>British English</key>
+		<string>英语（英国）</string>
+		<key>Bucket</key>
+		<string>存储桶</string>
+		<key>Button</key>
+		<string>按钮</string>
+		<key>Buy</key>
+		<string>购买</string>
+		<key>Buy Shottr</key>
+		<string>购买 Shottr</string>
+		<key>CHECK NEW VERSION</key>
+		<string>检查新版本</string>
+		<key>Canadian English</key>
+		<string>英语（加拿大）</string>
+		<key>Cancel</key>
+		<string>取消</string>
+		<key>Capture</key>
+		<string>截图</string>
+		<key>Capture Active Window</key>
+		<string>截取活动窗口</string>
+		<key>Capture Any Window</key>
+		<string>截取任意窗口</string>
+		<key>Capture Area</key>
+		<string>截取区域</string>
+		<key>Capture Fullscreen</key>
+		<string>截取全屏</string>
+		<key>Capture Screen</key>
+		<string>截取屏幕</string>
+		<key>Capture Selection</key>
+		<string>截取选区</string>
+		<key>Capture Window</key>
+		<string>截取窗口</string>
+		<key>Change</key>
+		<string>更改</string>
+		<key>Checking</key>
+		<string>检查中</string>
+		<key>Checking connection</key>
+		<string>正在检查连接</string>
+		<key>Chinese</key>
+		<string>中文</string>
+		<key>Chinese (Cantonese)</key>
+		<string>中文（粤语）</string>
+		<key>Choose default folder</key>
+		<string>选择默认文件夹</string>
+		<key>Clear</key>
+		<string>清除</string>
+		<key>Click to open in Finder</key>
+		<string>点按在访达中打开</string>
+		<key>Click to switch PX/PT</key>
+		<string>点按切换 PX/PT</string>
+		<key>Clipboard</key>
+		<string>剪贴板</string>
+		<key>Close</key>
+		<string>关闭</string>
+		<key>Cloud</key>
+		<string>云端</string>
+		<key>Color</key>
+		<string>颜色</string>
+		<key>Color Format</key>
+		<string>颜色格式</string>
+		<key>Colormix</key>
+		<string>混色</string>
+		<key>Colors</key>
+		<string>颜色</string>
+		<key>Configure</key>
+		<string>配置</string>
+		<key>Confirmation style</key>
+		<string>确认样式</string>
+		<key>Copied to the clipboard</key>
+		<string>已拷贝到剪贴板</string>
+		<key>Copy</key>
+		<string>拷贝</string>
+		<key>Copy (Esc or ⌘C)</key>
+		<string>复制（Esc 或 ⌘C）</string>
+		<key>Copy Average Color</key>
+		<string>拷贝平均颜色</string>
+		<key>Copy Image</key>
+		<string>拷贝图像</string>
+		<key>Copy Pixel Color</key>
+		<string>拷贝像素颜色</string>
+		<key>Copy Text Color</key>
+		<string>拷贝文字颜色</string>
+		<key>Copy image first</key>
+		<string>请先拷贝图像</string>
+		<key>Counter</key>
+		<string>编号</string>
+		<key>Counter (C)</key>
+		<string>编号 (C)</string>
+		<key>Crop</key>
+		<string>裁剪</string>
+		<key>Crop/Select</key>
+		<string>裁剪/选择</string>
+		<key>Crop/Select (V)</key>
+		<string>裁剪/选择 (V)</string>
+		<key>Custom</key>
+		<string>自定义</string>
+		<key>Custom Notification</key>
+		<string>自定义通知</string>
+		<key>Cut</key>
+		<string>剪切</string>
+		<key>Cyrillic</key>
+		<string>西里尔文</string>
+		<key>Czech</key>
+		<string>捷克语</string>
+		<key>Danish</key>
+		<string>丹麦语</string>
+		<key>Dansk</key>
+		<string>丹麦语</string>
+		<key>Dark</key>
+		<string>深色</string>
+		<key>Default</key>
+		<string>默认</string>
+		<key>Default folder is not set</key>
+		<string>未设置默认文件夹</string>
+		<key>Default zoom level</key>
+		<string>默认缩放级别</string>
+		<key>Delayed Screenshot (3s)</key>
+		<string>延时截图（3秒）</string>
+		<key>Delete</key>
+		<string>删除</string>
+		<key>Deutsch</key>
+		<string>德语</string>
+		<key>Diagnostics information</key>
+		<string>诊断信息</string>
+		<key>Diagonal gradient</key>
+		<string>对角渐变</string>
+		<key>Did you know that properly purchased apps on average run 18.3% faster?</key>
+		<string>你知道吗？正版购买的应用平均运行速度要快 18.3%。</string>
+		<key>Disable</key>
+		<string>禁用</string>
+		<key>Disable Uploading</key>
+		<string>禁用上传</string>
+		<key>Don't Generate URL</key>
+		<string>不生成 URL</string>
+		<key>Don't show splash</key>
+		<string>不显示闪屏</string>
+		<key>Don’t Generate URL</key>
+		<string>不生成 URL</string>
+		<key>Don’t show splash</key>
+		<string>不显示闪屏</string>
+		<key>Downloading New Version</key>
+		<string>正在下载新版本</string>
+		<key>Downscale to 1× when saving</key>
+		<string>保存时缩至 1×</string>
+		<key>Drag'n'Drop Image</key>
+		<string>拖放图像</string>
+		<key>Draw</key>
+		<string>绘图</string>
+		<key>Dutch</key>
+		<string>荷兰语</string>
+		<key>Editor</key>
+		<string>编辑器</string>
+		<key>Enable</key>
+		<string>启用</string>
+		<key>Enable Image Upload in app settings first</key>
+		<string>请先在应用设置中启用图像上传</string>
+		<key>Enable URL Scheme (Deep Links)</key>
+		<string>启用 URL Scheme（深层链接）</string>
+		<key>Enable deep links</key>
+		<string>启用深层链接</string>
+		<key>Endpoint</key>
+		<string>端点</string>
+		<key>English+</key>
+		<string>英文（增强）</string>
+		<key>Enter</key>
+		<string>输入</string>
+		<key>Erase</key>
+		<string>擦除</string>
+		<key>Erase Text</key>
+		<string>擦除文字</string>
+		<key>Error</key>
+		<string>错误</string>
+		<key>Error Resizing Image</key>
+		<string>调整图像大小出错</string>
+		<key>Español</key>
+		<string>西班牙语</string>
+		<key>Every time you save a screenshot with Shottr, it will appear here.</key>
+		<string>每次用 Shottr 保存截图后，都会显示在这里。</string>
+		<key>Experimental features are only available to the Friends Club users.</key>
+		<string>实验性功能仅向会员用户开放。</string>
+		<key>Explore hidden features</key>
+		<string>探索隐藏功能</string>
+		<key>File Writing Error</key>
+		<string>文件写入错误</string>
+		<key>File uploaded successfully</key>
+		<string>文件上传成功</string>
+		<key>Filename template</key>
+		<string>文件名模板</string>
+		<key>Files</key>
+		<string>文件</string>
+		<key>Finishing indexing</key>
+		<string>索引即将完成</string>
+		<key>Floating Pin</key>
+		<string>浮动钉图</string>
+		<key>Floating Pin (⌘P)</key>
+		<string>浮动钉图（⌘P)</string>
+		<key>Folder</key>
+		<string>文件夹</string>
+		<key>Follow on Twitter</key>
+		<string>关注官方 Twitter</string>
+		<key>Font</key>
+		<string>字体</string>
+		<key>Forever</key>
+		<string>永久</string>
+		<key>Forget</key>
+		<string>忘记</string>
+		<key>Français</key>
+		<string>法语</string>
+		<key>Freehand Drawing</key>
+		<string>自由绘制</string>
+		<key>Freehand Drawing (D)</key>
+		<string>自由绘制 (D)</string>
+		<key>French</key>
+		<string>法语</string>
+		<key>Fullscreen Screenshot</key>
+		<string>全屏截图</string>
+		<key>Gaeilge</key>
+		<string>爱尔兰语</string>
+		<key>General</key>
+		<string>通用</string>
+		<key>Generate Presigned URL</key>
+		<string>生成预签名 URL</string>
+		<key>Generate Public Bucket URL</key>
+		<string>生成公共存储桶 URL</string>
+		<key>German</key>
+		<string>德语</string>
+		<key>Get a Token</key>
+		<string>获取 Token</string>
+		<key>Got  it!</key>
+		<string>明白了！</string>
+		<key>Gradient Backdrop is only available after the license activation.</key>
+		<string>渐变背景需先激活许可证。</string>
+		<key>Height</key>
+		<string>高度</string>
+		<key>Hi! I'm the world's most annoying salesperson. Do you want to buy Shottr?</key>
+		<string>嗨！我是世界上最烦人的销售。你想购买 Shottr 吗？</string>
+		<key>Hi! I’m the world’s most annoying salesperson. Do you want to buy Shottr?</key>
+		<string>嗨！我是世界上最烦人的销售。你想购买 Shottr 吗？</string>
+		<key>Hide menubar icon</key>
+		<string>隐藏菜单栏图标</string>
+		<key>Hide preview thumbnail</key>
+		<string>隐藏预览缩略图</string>
+		<key>Highlighter</key>
+		<string>荧光笔</string>
+		<key>Highlighter (H)</key>
+		<string>荧光笔 (H)</string>
+		<key>Hit Enter to crop</key>
+		<string>按回车键裁剪</string>
+		<key>Hold a ⓵ or ⓶ key, or an arrow key, and move your mouse over the area which you want to measure</key>
+		<string>按住 ⓵ 或 ⓶ 键（或方向键），将鼠标移到要测量的区域上</string>
+		<key>Hotkey</key>
+		<string>快捷键</string>
+		<key>Hotkeys</key>
+		<string>快捷键</string>
+		<key>Hover mouse over any pixel and press Tab</key>
+		<string>将鼠标悬停在任意像素上并按 Tab 键</string>
+		<key>How to reassign default shortcuts</key>
+		<string>如何重新分配默认快捷键</string>
+		<key>I actually own a little dinosaur, I pet him every time the app gets purchased. He loves that.</key>
+		<string>我真的养了一只小恐龙，每当有人购买这个应用我就摸摸它，它可喜欢了。</string>
+		<key>Image</key>
+		<string>图像</string>
+		<key>Image Blur</key>
+		<string>图像模糊</string>
+		<key>Image Reading Error</key>
+		<string>图像读取错误</string>
+		<key>Image Source Reading Error</key>
+		<string>图像源读取错误</string>
+		<key>Image Upload is Off</key>
+		<string>图像上传已关闭</string>
+		<key>Image Uploading &amp; Link Sharing</key>
+		<string>图像上传与链接分享</string>
+		<key>Image format</key>
+		<string>图像格式</string>
+		<key>Image size</key>
+		<string>图像尺寸</string>
+		<key>Indian English</key>
+		<string>英语（印度）</string>
+		<key>Indonesia</key>
+		<string>印尼语</string>
+		<key>Indonesian</key>
+		<string>印尼语</string>
+		<key>Info</key>
+		<string>信息</string>
+		<key>Inner Radius</key>
+		<string>内半径</string>
+		<key>Inset</key>
+		<string>内嵌</string>
+		<key>Instant Text/QR Recognition</key>
+		<string>即时文字/二维码识别</string>
+		<key>Integrations</key>
+		<string>集成</string>
+		<key>Interface</key>
+		<string>界面</string>
+		<key>Italian</key>
+		<string>意大利语</string>
+		<key>Italiano</key>
+		<string>意大利语</string>
+		<key>JPEG</key>
+		<string>JPEG</string>
+		<key>JSON Encoding Error</key>
+		<string>JSON 编码错误</string>
+		<key>JSON Parsing Error</key>
+		<string>JSON 解析错误</string>
+		<key>Japanese</key>
+		<string>日语</string>
+		<key>Japanese English</key>
+		<string>英语（日本）</string>
+		<key>Key prefix (path)</key>
+		<string>键前缀（路径）</string>
+		<key>Korean</key>
+		<string>韩语</string>
+		<key>Label</key>
+		<string>标签</string>
+		<key>Language</key>
+		<string>语言</string>
+		<key>Later</key>
+		<string>稍后</string>
+		<key>Launch at Startup</key>
+		<string>开机时启动</string>
+		<key>Learn More</key>
+		<string>了解更多</string>
+		<key>Library</key>
+		<string>截图库</string>
+		<key>License</key>
+		<string>许可证</string>
+		<key>License is checked</key>
+		<string>许可证已验证</string>
+		<key>Lietuvių</key>
+		<string>立陶宛语</string>
+		<key>Light</key>
+		<string>浅色</string>
+		<key>Line</key>
+		<string>直线</string>
+		<key>Line (L)</key>
+		<string>直线 (L)</string>
+		<key>Link Expiration</key>
+		<string>链接有效期</string>
+		<key>Link sharing</key>
+		<string>链接分享</string>
+		<key>Load From Clipboard</key>
+		<string>从剪贴板载入</string>
+		<key>Magnifier</key>
+		<string>放大镜</string>
+		<key>Magnifier (M)</key>
+		<string>放大镜 (M)</string>
+		<key>Magyar</key>
+		<string>匈牙利语</string>
+		<key>Main window</key>
+		<string>主窗口</string>
+		<key>Malay</key>
+		<string>马来语</string>
+		<key>Manage</key>
+		<string>管理</string>
+		<key>Manage Uploads</key>
+		<string>管理上传</string>
+		<key>Manual Scrolling Capture</key>
+		<string>手动滚动截图</string>
+		<key>Manually (close button)</key>
+		<string>手动（关闭按钮）</string>
+		<key>Marker</key>
+		<string>标记</string>
+		<key>Maybe Later</key>
+		<string>以后再说</string>
+		<key>Menubar icon</key>
+		<string>菜单栏图标</string>
+		<key>Mesh gradient</key>
+		<string>网格渐变</string>
+		<key>Misc</key>
+		<string>杂项</string>
+		<key>More</key>
+		<string>更多</string>
+		<key>More Tools</key>
+		<string>更多工具</string>
+		<key>More...</key>
+		<string>更多…</string>
+		<key>More…</key>
+		<string>更多…</string>
+		<key>Multilingual</key>
+		<string>多语言</string>
+		<key>Name</key>
+		<string>名称</string>
+		<key>Nederlands</key>
+		<string>荷兰语</string>
+		<key>Never</key>
+		<string>从不</string>
+		<key>New Zealand English</key>
+		<string>英语（新西兰）</string>
+		<key>Next Time</key>
+		<string>下次再说</string>
+		<key>No</key>
+		<string>否</string>
+		<key>No Image to Upload</key>
+		<string>没有可上传的图像</string>
+		<key>No text detected</key>
+		<string>未检测到文字</string>
+		<key>No windows are present, try taking a fullscreen screenshot instead</key>
+		<string>当前没有可用窗口，请尝试全屏截图</string>
+		<key>None</key>
+		<string>无</string>
+		<key>Norsk bokmål</key>
+		<string>挪威语（博克马尔）</string>
+		<key>Norsk nynorsk</key>
+		<string>挪威语（尼诺斯克）</string>
+		<key>Norwegian</key>
+		<string>挪威语</string>
+		<key>Norwegian (Bokmål)</key>
+		<string>挪威语（博克马尔）</string>
+		<key>Norwegian (Nynorsk)</key>
+		<string>挪威语（尼诺斯克）</string>
+		<key>Number</key>
+		<string>编号</string>
+		<key>OCR line breaks</key>
+		<string>OCR 换行</string>
+		<key>OK</key>
+		<string>好</string>
+		<key>Off</key>
+		<string>关闭</string>
+		<key>On</key>
+		<string>开启</string>
+		<key>One logical point is equal two physical pixels on Retina displays. Use shortcut P to switch modes.</key>
+		<string>在 Retina 显示器上，一个逻辑点等于两个物理像素。使用快捷键 P 切换模式。</string>
+		<key>Opacity</key>
+		<string>不透明度</string>
+		<key>Open</key>
+		<string>打开</string>
+		<key>Open File</key>
+		<string>打开文件</string>
+		<key>Open Image</key>
+		<string>打开图像</string>
+		<key>Open System Settings</key>
+		<string>打开系统设置</string>
+		<key>Open in Default App</key>
+		<string>用默认应用打开</string>
+		<key>Open screenshots in editor</key>
+		<string>在编辑器中打开截图</string>
+		<key>Other</key>
+		<string>其他</string>
+		<key>Outer Radius</key>
+		<string>外半径</string>
+		<key>Output</key>
+		<string>输出</string>
+		<key>Oval</key>
+		<string>椭圆</string>
+		<key>Oval (O)</key>
+		<string>椭圆 (O)</string>
+		<key>PNG</key>
+		<string>PNG</string>
+		<key>Paste</key>
+		<string>粘贴</string>
+		<key>Paste Image</key>
+		<string>粘贴图像</string>
+		<key>Paste Image (⌘V)</key>
+		<string>粘贴图像（⌘V)</string>
+		<key>Permissions Not Granted</key>
+		<string>未授予权限</string>
+		<key>Pick a folder for your screenshots.</key>
+		<string>为你的截图选择一个文件夹。</string>
+		<key>Pin</key>
+		<string>钉住</string>
+		<key>Pin to Screen</key>
+		<string>钉在屏幕上</string>
+		<key>Play sound</key>
+		<string>播放声音</string>
+		<key>Polish</key>
+		<string>波兰语</string>
+		<key>Polski</key>
+		<string>波兰语</string>
+		<key>Portuguese (Brazil)</key>
+		<string>葡萄牙语（巴西）</string>
+		<key>Português Europeu</key>
+		<string>葡萄牙语（欧洲）</string>
+		<key>Português do Brasil</key>
+		<string>葡萄牙语（巴西）</string>
+		<key>Prefer 100%</key>
+		<string>优先 100%</string>
+		<key>Preferences</key>
+		<string>偏好设置</string>
+		<key>Preferences…</key>
+		<string>偏好设置…</string>
+		<key>Preparing to index</key>
+		<string>正在准备索引</string>
+		<key>Preparing to index your files...</key>
+		<string>正在为文件建立索引…</string>
+		<key>Presigned URLs are only valid for up to 7 days</key>
+		<string>预签名 URL 最长有效期为 7 天</string>
+		<key>Press Shift+Tab to copy the darkest color in the 20px area around the cursor</key>
+		<string>按 Shift+Tab 拷贝光标周围 20px 区域内最深的颜色</string>
+		<key>Primary OCR language</key>
+		<string>OCR 主语言</string>
+		<key>Print</key>
+		<string>打印</string>
+		<key>Problem Occurred</key>
+		<string>出现问题</string>
+		<key>Public bucket URL</key>
+		<string>公共存储桶 URL</string>
+		<key>Purchase</key>
+		<string>购买</string>
+		<key>Purchase License</key>
+		<string>购买许可证</string>
+		<key>Purchase Shottr</key>
+		<string>购买 Shottr</string>
+		<key>Purchase and activate the app to add a pretty background</key>
+		<string>购买并激活后才能使用精美背景</string>
+		<key>Purchase and activate the app to use custom colors</key>
+		<string>购买并激活后才能使用自定义颜色</string>
+		<key>Purchase...</key>
+		<string>购买…</string>
+		<key>Purchase…</key>
+		<string>购买…</string>
+		<key>Quit</key>
+		<string>退出</string>
+		<key>Quit Shottr</key>
+		<string>退出 Shottr</string>
+		<key>Radial gradient</key>
+		<string>径向渐变</string>
+		<key>Reassign Default</key>
+		<string>重设默认</string>
+		<key>Reassign default shortcuts</key>
+		<string>重新分配默认快捷键</string>
+		<key>Recenter</key>
+		<string>重新居中</string>
+		<key>Recognition</key>
+		<string>识别</string>
+		<key>Recognize Text/QR</key>
+		<string>识别文字/二维码</string>
+		<key>Recording</key>
+		<string>录制</string>
+		<key>Rectangle</key>
+		<string>矩形</string>
+		<key>Rectangle (R)</key>
+		<string>矩形 (R)</string>
+		<key>Region</key>
+		<string>区域</string>
+		<key>Regular tier. Purchase Shottr and get rid of the Annoying Fellow.</key>
+		<string>免费版。购买 Shottr 即可摆脱烦人的小伙伴。</string>
+		<key>Remove</key>
+		<string>移除</string>
+		<key>Remove line breaks</key>
+		<string>移除换行</string>
+		<key>Reopen Shottr</key>
+		<string>重新打开 Shottr</string>
+		<key>Repeat Area Capture</key>
+		<string>重复上次区域截图</string>
+		<key>Repeat area screenshot</key>
+		<string>重复区域截图</string>
+		<key>Report a</key>
+		<string>报告</string>
+		<key>Report a Bug</key>
+		<string>报告问题</string>
+		<key>Requires Activation</key>
+		<string>需要激活</string>
+		<key>Reset</key>
+		<string>重置</string>
+		<key>Reset all settings</key>
+		<string>重置所有设置</string>
+		<key>Resize</key>
+		<string>调整大小</string>
+		<key>Resize Image</key>
+		<string>调整图像大小</string>
+		<key>Resize retina screenshots</key>
+		<string>调整 Retina 截图分辨率</string>
+		<key>Restart</key>
+		<string>重启</string>
+		<key>Restore</key>
+		<string>恢复</string>
+		<key>Restore License</key>
+		<string>恢复许可证</string>
+		<key>Reverse scroll direction</key>
+		<string>反转滚动方向</string>
+		<key>Romanian</key>
+		<string>罗马尼亚语</string>
+		<key>Română</key>
+		<string>罗马尼亚语</string>
+		<key>Ruler</key>
+		<string>标尺</string>
+		<key>Ruler (1 or 2)</key>
+		<string>标尺 (1 或 2)</string>
+		<key>Run at Startup</key>
+		<string>开机时启动</string>
+		<key>S3 (Amazon, Cloudflare, Backblaze, etc.)</key>
+		<string>S3（Amazon、Cloudflare、Backblaze 等）</string>
+		<key>S3 uploading is only available after the license activation.</key>
+		<string>S3 上传需先激活许可证。</string>
+		<key>Save</key>
+		<string>保存</string>
+		<key>Save (⌘S)</key>
+		<string>保存（⌘S）</string>
+		<key>Save As</key>
+		<string>存储为</string>
+		<key>Save Image</key>
+		<string>保存图像</string>
+		<key>Save Image As</key>
+		<string>图像另存为…</string>
+		<key>Save To</key>
+		<string>保存到</string>
+		<key>Save format</key>
+		<string>保存格式</string>
+		<key>Save to</key>
+		<string>保存到</string>
+		<key>Screen</key>
+		<string>屏幕</string>
+		<key>Screen Recording</key>
+		<string>屏幕录制</string>
+		<key>Screenshot Library</key>
+		<string>截图库</string>
+		<key>Screenshot Library is disabled</key>
+		<string>截图库已禁用</string>
+		<key>Screenshot upload failed</key>
+		<string>截图上传失败</string>
+		<key>Screenshots folder</key>
+		<string>截图文件夹</string>
+		<key>Screenshots that you save</key>
+		<string>你保存的截图</string>
+		<key>Scrolling (Up)</key>
+		<string>滚动截图（向上）</string>
+		<key>Scrolling Capture</key>
+		<string>滚动截图</string>
+		<key>Scrolling Capture (Up)</key>
+		<string>滚动截图（向上）</string>
+		<key>Scrolling Capture requires accessibility permissions</key>
+		<string>滚动截图需要辅助功能权限</string>
+		<key>Scrolling screenshot</key>
+		<string>滚动截图</string>
+		<key>Scrolling screenshot max height</key>
+		<string>滚动截图最大高度</string>
+		<key>Scrolling screenshot speed</key>
+		<string>滚动截图速度</string>
+		<key>Search</key>
+		<string>搜索</string>
+		<key>Secret key</key>
+		<string>Secret Key</string>
+		<key>Select Folder</key>
+		<string>选择文件夹</string>
+		<key>Select an area and press C to copy its average color</key>
+		<string>框选区域并按 C 键拷贝其平均颜色</string>
+		<key>Select area first</key>
+		<string>请先选择区域</string>
+		<key>Select rectangle with text that you want to recognize and copy</key>
+		<string>框选想要识别并复制的文字区域</string>
+		<key>Server</key>
+		<string>服务器</string>
+		<key>Service</key>
+		<string>服务</string>
+		<key>Settings</key>
+		<string>设置</string>
+		<key>Setup</key>
+		<string>设置</string>
+		<key>Setup Hotkeys</key>
+		<string>设置快捷键</string>
+		<key>Shadow</key>
+		<string>阴影</string>
+		<key>Shortcut</key>
+		<string>快捷键</string>
+		<key>Shortcut 1</key>
+		<string>快捷键 1</string>
+		<key>Shortcut 2</key>
+		<string>快捷键 2</string>
+		<key>Shortcuts</key>
+		<string>快捷键</string>
+		<key>Shot on Twitter</key>
+		<string>Twitter 官方账号</string>
+		<key>Shottr Cloud</key>
+		<string>Shottr 云</string>
+		<key>Shottr allows you to upload an image online and generate a shareable link. Use the dropdown above to enable this functionality.</key>
+		<string>Shottr 支持将图像上传到网络并生成分享链接。使用上方下拉菜单启用此功能。</string>
+		<key>Shottr is on Black Friday sale</key>
+		<string>Shottr 黑色星期五优惠中</string>
+		<key>Shottr needs permission to record the screen</key>
+		<string>Shottr 需要屏幕录制权限</string>
+		<key>Shottr needs the screen recording permission to perform OCR</key>
+		<string>Shottr 需要屏幕录制权限才能进行文字识别</string>
+		<key>Shottr on Twitter</key>
+		<string>Shottr 官方 Twitter</string>
+		<key>Shottr wasn't able to scroll</key>
+		<string>Shottr 无法滚动</string>
+		<key>Show</key>
+		<string>显示</string>
+		<key>Show Recent Captures</key>
+		<string>显示最近截图</string>
+		<key>Show Shottr</key>
+		<string>显示 Shottr</string>
+		<key>Show Size in Logical Points</key>
+		<string>以逻辑点显示尺寸</string>
+		<key>Show mouse cursor</key>
+		<string>显示鼠标指针</string>
+		<key>Singapore English</key>
+		<string>英语（新加坡）</string>
+		<key>Size</key>
+		<string>大小</string>
+		<key>Slovenščina</key>
+		<string>斯洛文尼亚语</string>
+		<key>Solid</key>
+		<string>纯色</string>
+		<key>Solid Color</key>
+		<string>纯色</string>
+		<key>Something went wrong</key>
+		<string>出错了</string>
+		<key>South African English</key>
+		<string>英语（南非）</string>
+		<key>Spanish</key>
+		<string>西班牙语</string>
+		<key>Splash window</key>
+		<string>启动闪屏</string>
+		<key>Spotlight</key>
+		<string>聚光灯</string>
+		<key>Spotlight (S)</key>
+		<string>聚光灯 (S)</string>
+		<key>Start Scrolling (Up or Down)</key>
+		<string>开始滚动（向上或向下）</string>
+		<key>Steps to assign ⌘⇧4 to Shottr</key>
+		<string>将 ⌘⇧4 分配给 Shottr 的步骤</string>
+		<key>Stop</key>
+		<string>停止</string>
+		<key>Storage</key>
+		<string>存储</string>
+		<key>Suomi</key>
+		<string>芬兰语</string>
+		<key>Svenska</key>
+		<string>瑞典语</string>
+		<key>Swedish</key>
+		<string>瑞典语</string>
+		<key>System Notification</key>
+		<string>系统通知</string>
+		<key>Take a screenshot before adding a capture to it</key>
+		<string>请先截图，再为其添加截图</string>
+		<key>Take a screenshot first</key>
+		<string>请先截图</string>
+		<key>Test</key>
+		<string>测试</string>
+		<key>Test Connection</key>
+		<string>测试连接</string>
+		<key>Text</key>
+		<string>文字</string>
+		<key>Text (T)</key>
+		<string>文字 (T)</string>
+		<key>Text copied to the clipboard</key>
+		<string>文字已拷贝到剪贴板</string>
+		<key>Text without line breaks copied</key>
+		<string>已复制不含换行的文字</string>
+		<key>Text/QR Recognition</key>
+		<string>文字/二维码识别</string>
+		<key>Thai</key>
+		<string>泰语</string>
+		<key>Thank you for purchasing</key>
+		<string>感谢购买</string>
+		<key>The image uploaded to your custom storage</key>
+		<string>图像已上传到你的自定义存储</string>
+		<key>Thickness</key>
+		<string>粗细</string>
+		<key>Thumbnail</key>
+		<string>缩略图</string>
+		<key>Title</key>
+		<string>标题</string>
+		<key>To upload images to Shottr Cloud, you need a security token. Think of it as a secret code that grants access to your uploads.</key>
+		<string>要上传图像到 Shottr 云，需要一个安全令牌，可将其视为访问你上传内容的密钥。</string>
+		<key>Token</key>
+		<string>令牌</string>
+		<key>Transparent</key>
+		<string>透明</string>
+		<key>Transparent Background</key>
+		<string>透明背景</string>
+		<key>Trim shadow</key>
+		<string>裁掉阴影</string>
+		<key>Turkish</key>
+		<string>土耳其语</string>
+		<key>U.S. English</key>
+		<string>英语（美国）</string>
+		<key>URL Scheme API</key>
+		<string>URL Scheme API</string>
+		<key>URL copied to the clipboard</key>
+		<string>网址已拷贝到剪贴板</string>
+		<key>Ukrainian</key>
+		<string>乌克兰语</string>
+		<key>Unable to update Shottr</key>
+		<string>无法更新 Shottr</string>
+		<key>Update Shottr</key>
+		<string>更新 Shottr</string>
+		<key>Update the app</key>
+		<string>更新应用</string>
+		<key>Updates</key>
+		<string>更新</string>
+		<key>Upgrade</key>
+		<string>升级</string>
+		<key>Upload</key>
+		<string>上传</string>
+		<key>Upload Image</key>
+		<string>上传图像</string>
+		<key>Upload Integration is Off</key>
+		<string>上传集成已关闭</string>
+		<key>Upload Succeeded</key>
+		<string>上传成功</string>
+		<key>Upload and Get Link (⌘U)</key>
+		<string>上传并获取链接（⌘U)</string>
+		<key>Uploading</key>
+		<string>上传</string>
+		<key>Uploading…</key>
+		<string>上传中…</string>
+		<key>Uploads</key>
+		<string>上传</string>
+		<key>Use the keyboard</key>
+		<string>使用键盘</string>
+		<key>Version</key>
+		<string>版本</string>
+		<key>Vertical gradient</key>
+		<string>垂直渐变</string>
+		<key>Vietnamese</key>
+		<string>越南语</string>
+		<key>Wallpaper</key>
+		<string>壁纸</string>
+		<key>When you purchase the app, I get to end my work day 5 minutes earlier. No kidding.</key>
+		<string>购买此应用后，我每天就能提前 5 分钟下班。不骗你。</string>
+		<key>Width</key>
+		<string>宽度</string>
+		<key>Will only work if your bucket is public</key>
+		<string>仅当存储桶为公共访问时有效</string>
+		<key>Window</key>
+		<string>窗口</string>
+		<key>Window Capture</key>
+		<string>窗口截图</string>
+		<key>Window Screenshot Background</key>
+		<string>窗口截图背景</string>
+		<key>Yes</key>
+		<string>是</string>
+		<key>You can change scrolling height limit in the app preferences</key>
+		<string>你可以在应用偏好设置中调整滚动高度限制</string>
+		<key>You didn't select the area</key>
+		<string>你没有选择区域</string>
+		<key>Your license number is in the confirmation email that you receive after purchasing Shottr</key>
+		<string>你的许可证编号在购买 Shottr 后收到的确认邮件中</string>
+		<key>Your license number is saved</key>
+		<string>你的许可证编号已保存</string>
+		<key>Your tier: Free</key>
+		<string>当前版本：免费版</string>
+		<key>Your tier: Pro</key>
+		<string>当前版本：专业版</string>
+		<key>Zoom with mouse wheel</key>
+		<string>鼠标滚轮缩放</string>
+	</dict>
+	<key>prefix</key>
+	<dict>
+		<key>Add Capture (</key>
+		<string>新建截图（</string>
+		<key>Copy (Esc or </key>
+		<string>复制（Esc 或 </string>
+		<key>Copy as </key>
+		<string>拷贝为 </string>
+		<key>Files (</key>
+		<string>文件（</string>
+		<key>Floating Pin (</key>
+		<string>浮动钉图（</string>
+		<key>Go to System Settings </key>
+		<string>前往系统设置 </string>
+		<key>Paste Image (</key>
+		<string>粘贴图像（</string>
+		<key>Save (</key>
+		<string>保存（</string>
+		<key>Test Fai</key>
+		<string>测试失败</string>
+		<key>Upload and Get Link (</key>
+		<string>上传并获取链接（</string>
+		<key>Upload f</key>
+		<string>上传失败</string>
+	</dict>
+</dict>
+</plist>
