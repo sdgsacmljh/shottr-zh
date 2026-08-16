@@ -1,56 +1,82 @@
 #!/bin/bash
-#
-# shottr-zh — 卸载汉化，恢复 Shottr 原始状态
-#
-# 用法:
-#   ./uninstall.sh [Shottr.app 路径]   # 默认 /Applications/Shottr.app
-#
+# shottr-zh — 一键卸载并恢复完整官方 Shottr
 set -euo pipefail
 
+SUPPORTED_VERSION="1.9.1"
+SUPPORTED_BUILD="128"
 BUNDLE_ID="cc.ffitch.shottr"
+SHOTTR_TEAM_ID="2Y683PRQWN"
 APP_PATH="${1:-/Applications/Shottr.app}"
-BACKUP_DIR="${SHOTTR_ZH_BACKUP_DIR:-$HOME/.shottr-zh/backup}"
+BACKUP_DIR="${SHOTTR_ZH_BACKUP_DIR:-$HOME/.shottr-zh/backups}"
+SKIP_TCC="${SHOTTR_ZH_SKIP_TCC:-0}"
+SKIP_LAUNCH="${SHOTTR_ZH_SKIP_LAUNCH:-0}"
+SKIP_PROCESS_CONTROL="${SHOTTR_ZH_SKIP_PROCESS_CONTROL:-0}"
 
 info()  { printf '\033[1;34m[信息]\033[0m %s\n' "$*"; }
 ok()    { printf '\033[1;32m[完成]\033[0m %s\n' "$*"; }
 warn()  { printf '\033[1;33m[警告]\033[0m %s\n' "$*"; }
-error() { printf '\033[1;31m[错误]\033[0m %s\n' "$*"; exit 1; }
+error() { printf '\033[1;31m[错误]\033[0m %s\n' "$*" >&2; exit 1; }
+
+validate_official_app() {
+  target="$1"
+  [ -d "$target" ] || error "完整官方备份不存在: $target"
+  codesign --verify --deep --strict "$target" >/dev/null 2>&1 || error "官方备份签名无效，拒绝恢复"
+  signature_info="$(codesign -dv --verbose=4 "$target" 2>&1)"
+  grep -Fq "Identifier=$BUNDLE_ID" <<<"$signature_info" || error "备份不是 Shottr"
+  grep -Fq "TeamIdentifier=$SHOTTR_TEAM_ID" <<<"$signature_info" || error "备份开发者团队标识不匹配"
+  spctl --assess --type execute "$target" >/dev/null 2>&1 || error "Gatekeeper 未认可官方备份"
+}
 
 [ -d "$APP_PATH" ] || error "未找到 Shottr: $APP_PATH"
+[ -w "$APP_PATH/Contents" ] || error "没有权限修改 $APP_PATH"
 BIN="$APP_PATH/Contents/MacOS/Shottr"
+MARKER="$APP_PATH/Contents/Resources/shottr_zh_backup_id"
 
-if ! otool -L "$BIN" 2>/dev/null | grep -q shottr_zh; then
+CURRENT_LOADS="$(otool -L "$BIN" 2>/dev/null || true)"
+if ! grep -Fq shottr_zh <<<"$CURRENT_LOADS"; then
   warn "未检测到汉化注入，无需卸载"
   exit 0
 fi
 
-# ===== 1. 恢复原始二进制 =====
-BACKUP="$(ls -t "$BACKUP_DIR"/Shottr-*.bin 2>/dev/null | head -1 || true)"
-[ -n "$BACKUP" ] || error "找不到原始备份（$BACKUP_DIR/Shottr-*.bin），无法恢复。请重新下载安装 Shottr"
-info "恢复原始二进制: $(basename "$BACKUP")"
-cp "$BACKUP" "$BIN"
+[ -f "$MARKER" ] || \
+  error "这是旧版汉化且没有完整备份标识。请从 https://shottr.cc 覆盖安装官方 Shottr"
+BACKUP_ID="$(sed -n '1p' "$MARKER")"
+case "$BACKUP_ID" in
+  Shottr-${SUPPORTED_VERSION}-${SUPPORTED_BUILD}-*.app) ;;
+  *) error "备份标识无效" ;;
+esac
+case "$BACKUP_ID" in
+  *..*|*/*) error "备份标识包含非法路径" ;;
+esac
+BACKUP_APP="$BACKUP_DIR/$BACKUP_ID"
+validate_official_app "$BACKUP_APP"
 
-# ===== 2. 清理注入的文件 =====
-info "清理汉化文件…"
-rm -f "$APP_PATH/Contents/Frameworks/shottr_zh.dylib"
-rm -f "$APP_PATH/Contents/Resources/zh_dict.plist"
-
-# ===== 3. 校验签名：原始二进制带原开发者签名，通常直接有效 =====
-if codesign --verify --deep --strict "$APP_PATH" >/dev/null 2>&1; then
-  info "原始签名有效，无需重签"
-else
-  warn "原始签名校验未通过，使用 ad-hoc 签名修复…"
-  codesign --force --deep --sign - "$APP_PATH" >/dev/null 2>&1 || error "签名失败"
-  # ad-hoc 重签后屏幕录制授权会失效，重置以便重新授予
-  tccutil reset ScreenCapture "$BUNDLE_ID" >/dev/null 2>&1 || true
+if [ "$SKIP_PROCESS_CONTROL" != "1" ]; then
+  killall Shottr >/dev/null 2>&1 || true
+  sleep 1
 fi
 
-# ===== 4. 重启 =====
-killall Shottr >/dev/null 2>&1 || true
-sleep 1
-open "$APP_PATH"
+info "从完整备份恢复官方 Shottr…"
+ditto --rsrc --extattr "$BACKUP_APP" "$APP_PATH"
+rm -f "$APP_PATH/Contents/Frameworks/shottr_zh.dylib"
+rm -f "$APP_PATH/Contents/Resources/zh_dict.plist"
+rm -f "$APP_PATH/Contents/Resources/shottr_zh_backup_id"
+if [ ! -d "$BACKUP_APP/Contents/Frameworks" ]; then
+  rmdir "$APP_PATH/Contents/Frameworks" >/dev/null 2>&1 || true
+fi
 
-ok "已恢复英文原版。备份保留在 $BACKUP_DIR（可手动删除整个目录）"
-echo ""
-echo "  提示：如果 Shottr 自带更新（应用内更新会替换整个 app），"
-echo "  汉化会被覆盖，重新运行 ./install.sh 即可（备份按版本区分，互不影响）。"
+codesign --verify --deep --strict "$APP_PATH" >/dev/null 2>&1 || error "恢复后的官方签名校验失败"
+signature_info="$(codesign -dv --verbose=4 "$APP_PATH" 2>&1)"
+grep -Fq "TeamIdentifier=$SHOTTR_TEAM_ID" <<<"$signature_info" || error "未恢复官方 Developer ID 签名"
+spctl --assess --type execute "$APP_PATH" >/dev/null 2>&1 || error "恢复后未通过 Gatekeeper"
+xattr -dr com.apple.quarantine "$APP_PATH" >/dev/null 2>&1 || true
+
+if [ "$SKIP_TCC" != "1" ]; then
+  tccutil reset ScreenCapture "$BUNDLE_ID" >/dev/null 2>&1 || true
+fi
+if [ "$SKIP_LAUNCH" != "1" ]; then
+  open "$APP_PATH" || error "官方 Shottr 启动失败"
+fi
+
+ok "已恢复官方英文版及 Developer ID 签名"
+printf '完整备份保留在 %s，可供以后重新安装或恢复。\n' "${BACKUP_DIR}"

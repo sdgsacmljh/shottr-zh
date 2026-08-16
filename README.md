@@ -1,107 +1,121 @@
 # shottr-zh — Shottr 中文汉化补丁
 
-一键将 [Shottr](https://shottr.cc)（macOS 截图工具）的**全部界面**汉化为中文，包括：
+[![Verify one-click installer](https://github.com/sdgsacmljh/shottr-zh/actions/workflows/verify.yml/badge.svg)](https://github.com/sdgsacmljh/shottr-zh/actions/workflows/verify.yml)
 
-- 菜单栏下拉菜单
-- 偏好设置窗口（通用 / 快捷键 / 上传 / 高级 / 许可证，含所有二级选项）
-- 截图编辑器工具栏与提示文案
-- 系统通知与各类弹窗
+将 macOS 截图工具 [Shottr](https://shottr.cc) 的菜单、设置、编辑器工具栏、通知和弹窗汉化为简体中文。
 
-| 项目 | 说明 |
+## 明确支持范围
+
+| 项目 | 支持范围 |
 |---|---|
-| 支持版本 | Shottr **v1.9.1**（build 128），其他版本未验证 |
-| 系统要求 | macOS 13+（arm64 / x86_64），Xcode 命令行工具 |
-| 安全性 | 本地编译、可一键完整卸载、原始二进制备份在 `~/.shottr-zh/backup` |
-| 词典规模 | 466 条精确匹配 + 11 条前缀规则，可持续扩充 |
+| Shottr | **v1.9.1，build 128**（[官方下载](https://shottr.cc/dl/Shottr-1.9.1.dmg)） |
+| macOS | **macOS 15 及以上** |
+| Mac | **Intel（x86_64）与 Apple Silicon（arm64）** |
+| 安装位置 | 默认 `/Applications/Shottr.app`，也支持自定义路径 |
 
-## 一键安装
+安装器会同时核对版本号、build、Bundle ID、官方 Developer Team ID、公证签名和双架构。任何一项不匹配都会在修改前停止，因此**不会尝试修改未验证的 Shottr 版本**。
+
+GitHub Actions 每周从 Shottr 官方重新下载 DMG，并在 macOS 15/26、Intel/Apple Silicon runner 上验证：全新安装、重复安装、双架构注入、签名、完整卸载和官方签名恢复。
+
+## 使用前准备
+
+1. 安装官方 Shottr v1.9.1 build 128，并拖入“应用程序”文件夹。
+2. 安装 Xcode 命令行工具（只需一次）：
 
 ```bash
-git clone https://github.com/sdgsacmljh/shottr-zh.git
-cd shottr-zh
-./install.sh
+xcode-select --install
 ```
 
-或免克隆直接安装（发布后可用）：
+命令行工具提供本地编译所需的 `clang`、`python3`、`codesign` 和 Mach-O 工具。汉化库只在你的 Mac 上编译，不下载预编译二进制。
+
+## 一键安装
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/sdgsacmljh/shottr-zh/main/install.sh | bash
 ```
 
-> Shottr 不在 `/Applications` 时，传入路径：`./install.sh /path/to/Shottr.app`
+自定义 Shottr 路径：
 
-**安装后必看**：由于重新签名，macOS 会要求重新授予一次屏幕录制权限（这是重签名的必然结果，无法绕过）：
+```bash
+curl -fsSL https://raw.githubusercontent.com/sdgsacmljh/shottr-zh/main/install.sh | bash -s -- "/path/to/Shottr.app"
+```
 
-1. 用一次截图功能，弹出提示时点「打开系统设置」
-2. 在 隐私与安全性 → 屏幕与系统音频录制 中开启 Shottr
-3. 按提示退出并重新打开 Shottr
+安装器会自动完成：
+
+1. 验证这是 Shottr 官方签名并通过 Apple Gatekeeper 的 v1.9.1 build 128。
+2. 完整备份整个官方应用到 `~/.shottr-zh/backups`，包括 Developer ID 签名。
+3. 本地编译 arm64 + x86_64 汉化动态库。
+4. 创建缺失的 Frameworks 目录、部署词典并安全注入两个架构。
+5. ad-hoc 重签、校验应用，并在验证官方来源后清除该应用的下载隔离标记。
+6. 重置屏幕录制授权并启动 Shottr。
+7. 任一步骤失败时自动恢复完整官方应用。
+
+首次截图时，macOS 会要求重新授予屏幕录制权限：在“系统设置 → 隐私与安全性 → 屏幕与系统音频录制”中允许 Shottr，然后重新打开应用。
 
 ## 一键卸载
 
 ```bash
-./uninstall.sh
+curl -fsSL https://raw.githubusercontent.com/sdgsacmljh/shottr-zh/main/uninstall.sh | bash
 ```
 
-恢复原始英文版（还原未修改的官方二进制，原始开发者签名自动生效）。
+卸载器使用安装时记录的精确备份恢复整个官方应用，而不是只替换主二进制。完成后会验证：
+
+- 汉化库和词典已删除；
+- 官方 Developer ID Team ID 已恢复；
+- Apple Gatekeeper 重新接受该应用；
+- 原始主程序哈希与安装前一致。
+
+## 从旧版 shottr-zh 迁移
+
+2026-08-16 之前发布的版本只备份了 Shottr 主二进制，无法恢复整个官方签名。若已安装旧版汉化：
+
+1. 从[官方 DMG](https://shottr.cc/dl/Shottr-1.9.1.dmg)将 Shottr 覆盖复制到“应用程序”；
+2. 确认官方英文版可以启动；
+3. 再运行上面的一键安装命令。
+
+新版安装器检测到旧版注入但找不到完整应用备份时会安全退出，不会继续覆盖。
 
 ## 工作原理
 
-Shottr 的界面字符串几乎全部由代码生成（非标准 Localizable.strings），传统 `.strings` 本地化方案行不通。本项目采用**运行时翻译**：
+Shottr 的界面字符串主要由代码生成，传统 `Localizable.strings` 无法覆盖。本项目在主程序的 Mach-O load-command 填充区写入 `LC_LOAD_DYLIB`，加载本地编译的翻译库。注入过程不会移动节区数据，也不会改变注入时的文件长度。
 
-```
-install.sh
-  ├─ 1. 备份官方原始二进制 → ~/.shottr-zh/backup/Shottr-<版本>.bin
-  ├─ 2. 现场编译翻译动态库 shottr_zh.dylib（arm64 + x86_64）
-  ├─ 3. 部署 dylib 与词典 zh_dict.plist 到 app 内
-  ├─ 4. 向主二进制注入 LC_LOAD_DYLIB（覆写 load commands 后的填充区，
-  │     不移动任何数据，不改变文件大小）
-  └─ 5. ad-hoc 重签名 + 重置屏幕录制授权
-```
+动态库通过 Objective-C method swizzle 翻译 AppKit 控件、菜单、窗口和通知文本，并遍历视图树处理 nib 直接解码的内容。当前词典包含 466 条精确匹配和 11 条前缀规则；未命中的文本记录到 `~/Library/Logs/shottr_zh.log`。
 
-动态库通过 Objective-C method swizzle 拦截 AppKit 的文本设置入口：
-
-- `NSMenuItem / NSMenu / NSButton / NSTextField / NSBox / NSTabViewItem / NSPopUpButton / NSSegmentedControl / NSWindow` 的标题与标签 setter
-- `UNMutableNotificationContent` 的通知标题与正文
-- **视图树遍历兜底**：窗口显示后延迟遍历整个 view 层级，翻译 nib 直接解码、不经 setter 的文本（设置窗口大量标签属于此类）
-- 未命中的字符串自动记录到 `~/Library/Logs/shottr_zh.log`，便于持续补充词典
-
-## 更新词典（参与贡献）
-
-发现漏翻译的英文？两步即可：
-
-1. 查看 `~/Library/Logs/shottr_zh.log`，把英文原文与中文翻译加入 `tools/gen_dict.py` 的 `EXACT` 字典
-2. 生成并提交：
+## 开发与验证
 
 ```bash
-python3 tools/gen_dict.py   # 重新生成 dict/zh_dict.plist
-./install.sh                # 重装（幂等，可安全重复运行）
+python3 tests/test_inject_macho.py -v
+./tests/e2e_official_dmg.sh
 ```
 
-欢迎通过 Pull Request 补充词条、适配新版本。
+端到端测试下载官方 DMG，只修改临时应用副本，不会碰 `/Applications/Shottr.app`，也不会重置本机权限。
+
+补充翻译后重新生成词典：
+
+```bash
+python3 tools/gen_dict.py
+```
 
 ## 常见问题
 
-**Q: 安装后截图提示需要权限，但设置里已经开了？**
-重签名后系统视为"新应用"，旧授权记录绑定原开发者证书，永远无法匹配。运行安装时脚本已自动执行 `tccutil reset ScreenCapture cc.ffitch.shottr`，只需按弹窗重新授权一次。手动执行：`tccutil reset ScreenCapture cc.ffitch.shottr`
+**为什么不支持其他 Shottr 版本？**
 
-**Q: Shottr 应用内自更新后汉化消失了？**
-更新会替换整个 app。重新运行 `./install.sh` 即可（备份按版本号区分，新版本会生成新备份）。
+Mach-O 布局和界面字符串可能随版本变化。未经官方 DMG 端到端验证就自动注入存在损坏风险，因此安装器选择安全拒绝。适配新版本后会更新支持矩阵。
 
-**Q: 安装后应用打不开 / 闪退？**
-运行 `./uninstall.sh` 恢复，然后提交 issue 附上 `~/Library/Logs/DiagnosticReports/` 下最新的 Shottr 崩溃报告。
+**为什么需要重新授权屏幕录制？**
 
-**Q: 会被系统 Gatekeeper 拦截吗？**
-不会。修改的是本机已安装且已授权运行的应用，ad-hoc 重签名后可正常运行。
+主程序修改后必须本地重签，macOS 会把它视为新的代码身份。安装器会重置旧授权，用户需重新允许一次。
 
-**Q: 翻译会改变截图内容或上传行为吗？**
-不会。动态库只改 UI 文本，不碰任何功能逻辑、网络请求与文件。
+**Shottr 自动更新后汉化消失怎么办？**
+
+更新会替换整个应用。只有当新版本已列入上方支持矩阵时才能重新安装；否则请等待项目适配。
 
 ## 免责声明
 
-- 本项目修改第三方应用的二进制文件，**仅供个人学习研究使用**，使用风险自负
-- Shottr 是 [Fogleman](https://github.com/fogleman) 的作品，Pro 功能请[购买正版](https://shottr.cc)支持作者
-- 请勿将汉化后的应用再分发；本项目分发的只有汉化补丁本身（源码 + 词典 + 安装脚本）
+- 本项目修改第三方应用，仅供个人学习研究，使用风险自负。
+- Shottr 及其商标属于原作者；Pro 功能请[购买正版](https://shottr.cc)。
+- 请勿分发修改后的 Shottr 应用。本仓库只提供 MIT 许可的汉化源码、词典和安装工具。
 
 ## License
 
-[MIT](LICENSE)（汉化补丁部分；Shottr 及其商标归原作者所有）
+[MIT](LICENSE)（仅适用于本项目代码与词典）
