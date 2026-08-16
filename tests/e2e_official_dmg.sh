@@ -60,7 +60,7 @@ DICT="$APP_PATH/Contents/Resources/zh_dict.plist"
 BIN="$APP_PATH/Contents/MacOS/Shottr"
 [ -f "$DYLIB" ]
 [ -f "$DICT" ]
-[ "$(otool -L "$BIN" | grep -Fc '@executable_path/../Frameworks/shottr_zh.dylib')" -eq 2 ]
+[ "$(otool -arch all -L "$BIN" | grep -Fc '@executable_path/../Frameworks/shottr_zh.dylib')" -eq 2 ]
 DYLIB_ARCHS="$(lipo -archs "$DYLIB")"
 grep -Fwq arm64 <<<"$DYLIB_ARCHS"
 grep -Fwq x86_64 <<<"$DYLIB_ARCHS"
@@ -82,7 +82,7 @@ spctl --assess --type execute "$BACKUP_APP"
 
 # Reinstall must be idempotent and reuse the exact full-app backup.
 run_installer
-[ "$(otool -L "$BIN" | grep -Fc '@executable_path/../Frameworks/shottr_zh.dylib')" -eq 2 ]
+[ "$(otool -arch all -L "$BIN" | grep -Fc '@executable_path/../Frameworks/shottr_zh.dylib')" -eq 2 ]
 
 SHOTTR_ZH_BACKUP_DIR="$BACKUP_DIR" \
 SHOTTR_ZH_SKIP_TCC=1 \
@@ -90,7 +90,7 @@ SHOTTR_ZH_SKIP_LAUNCH=1 \
 SHOTTR_ZH_SKIP_PROCESS_CONTROL=1 \
   "$REPO_ROOT/uninstall.sh" "$APP_PATH"
 
-FINAL_LOADS="$(otool -L "$BIN")"
+FINAL_LOADS="$(otool -arch all -L "$BIN")"
 if grep -Fq shottr_zh <<<"$FINAL_LOADS"; then
   echo "injected load command survived uninstall" >&2
   exit 1

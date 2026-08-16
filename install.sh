@@ -217,7 +217,7 @@ codesign --verify --deep --strict "$APP_PATH" >/dev/null 2>&1 || error "应用�
 DYLIB_ARCHS="$(lipo -archs "$DYLIB")"
 grep -Fwq arm64 <<<"$DYLIB_ARCHS" || error "汉化库缺少 arm64 架构"
 grep -Fwq x86_64 <<<"$DYLIB_ARCHS" || error "汉化库缺少 x86_64 架构"
-LOAD_COUNT="$(otool -L "$BIN" | grep -Fc '@executable_path/../Frameworks/shottr_zh.dylib')"
+LOAD_COUNT="$(otool -arch all -L "$BIN" | grep -Fc '@executable_path/../Frameworks/shottr_zh.dylib')"
 [ "$LOAD_COUNT" -eq 2 ] || error "汉化库未同时注入两个架构"
 
 # 用户已主动运行本地修改器，且修改前已验证官方 Team ID 与公证签名。
