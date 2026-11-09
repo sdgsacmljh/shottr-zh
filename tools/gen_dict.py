@@ -594,6 +594,21 @@ EXACT = {
     'We got to the bottom of the undo queue for this image. Go to the previous one?': '已到达该图像撤销队列的末尾，要切换到上一张吗？',
     'We got to the top of the redo queue for this image. Go to the next one?': '已到达该图像重做队列的开头，要切换到下一张吗？',
     'Please wait a moment and try again': '请稍候片刻后重试',
+    # ===== 第六轮：用户反馈的遗漏（富文本 / 本地化路径）=====
+    # --- 激活 / 许可证窗口 ---
+    'Thank you for activating Shottr!': '感谢激活 Shottr！',
+    'Your tier: Shottr Basic': '当前版本：Shottr Basic',
+    'Record Shortcut': '录制快捷键',
+    # --- 高级选择器说明（NSTextField 富文本，随选择动态刷新）---
+    'Advanced selector freezes the screen, enables floating lens, and allows Z/Arrows/Cmd for precise selection': '高级选择器会冻结屏幕、启用浮动放大镜，并允许用 Z / 方向键 / ⌘ 进行精确选择',
+    # --- 隐私声明（单字段多行，U+2028 行分隔符；同时兜底独立行）---
+    'We DO collect: performance metrics, error codes, frequency of feature usage; OS version, screen resolution and internationalization preferences.\u2028We DON\'T collect: any personal information, IP address, any images or text.\u2028Screenshots never leave the computer unless you upload them to the cloud.': '我们【会】收集：性能指标、错误代码、功能使用频率；操作系统版本、屏幕分辨率与国际化偏好设置。\u2028我们【不会】收集：任何个人信息、IP 地址、任何图像或文字。\u2028除非你将截图上传到云端，否则截图永远不会离开你的电脑。',
+    'We DO collect: performance metrics, error codes, frequency of feature usage; OS version, screen resolution and internationalization preferences.': '我们【会】收集：性能指标、错误代码、功能使用频率；操作系统版本、屏幕分辨率与国际化偏好设置。',
+    'We DON\'T collect: any personal information, IP address, any images or text.': '我们【不会】收集：任何个人信息、IP 地址、任何图像或文字。',
+    'Screenshots never leave the computer unless you upload them to the cloud.': '除非你将截图上传到云端，否则截图永远不会离开你的电脑。',
+    # --- 文件名模板格式符（无动态示例的行）---
+    '%p \u2014 AM/PM': '%p \u2014 上午/下午',
+    '%d \u2014 Day of month': '%d \u2014 一个月中的某天',
 }
 
 PREFIX = {
@@ -609,6 +624,36 @@ PREFIX = {
     'Files (': '文件（',
     'Upload f': '上传失败',
     'Test Fai': '测试失败',
+    # --- 文件名模板格式符描述（示例为动态值，用前缀保留）---
+    'Year (': '年（',
+    'Day of Year (': '一年中的第几天（',
+    'Timecode (': '时间码（',
+    'App name (': '应用名称（',
+    'Hour, 24h (': '24 小时制小时（',
+    'Hour, 12h (': '12 小时制小时（',
+    'Month (': '月（',
+    'Week num (': '周数（',
+    'Quarter (': '季度（',
+    'Second (': '秒（',
+    'Minute (': '分钟（',
+    'Weekday (': '星期（',
+    # 兼容运行时把 token 与描述拼成单字符串的情况（U+2014 长破折号）
+    '%Y \u2014 Year (': '%Y \u2014 年（',
+    '%y \u2014 Year (': '%y \u2014 年（',
+    '%j \u2014 Day of Year (': '%j \u2014 一年中的第几天（',
+    '%A \u2014 Weekday (': '%A \u2014 星期（',
+    '%a \u2014 Weekday (': '%a \u2014 星期（',
+    '%M \u2014 Minute (': '%M \u2014 分钟（',
+    '%m \u2014 Month (': '%m \u2014 月（',
+    '%b \u2014 Month (': '%b \u2014 月（',
+    '%B \u2014 Month (': '%B \u2014 月份（',
+    '%W \u2014 Week num (': '%W \u2014 周数（',
+    '%Q \u2014 Quarter (': '%Q \u2014 季度（',
+    '%S \u2014 Second (': '%S \u2014 秒（',
+    '%H \u2014 Hour, 24h (': '%H \u2014 24 小时制小时（',
+    '%I \u2014 Hour, 12h (': '%I \u2014 12 小时制小时（',
+    '%t \u2014 Timecode (': '%t \u2014 时间码（',
+    '%n \u2014 App name (': '%n \u2014 应用名称（',
 }
 
 def main():

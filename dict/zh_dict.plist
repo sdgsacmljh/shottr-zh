@@ -4,6 +4,10 @@
 <dict>
 	<key>exact</key>
 	<dict>
+		<key>%d — Day of month</key>
+		<string>%d — 一个月中的某天</string>
+		<key>%p — AM/PM</key>
+		<string>%p — 上午/下午</string>
 		<key>1 day</key>
 		<string>1 天</string>
 		<key>1. Go to System Settings → Keyboard → Keyboard Shortcuts</key>
@@ -46,6 +50,8 @@
 		<string>添加截图需先激活许可证。</string>
 		<key>Advanced</key>
 		<string>高级</string>
+		<key>Advanced selector freezes the screen, enables floating lens, and allows Z/Arrows/Cmd for precise selection</key>
+		<string>高级选择器会冻结屏幕、启用浮动放大镜，并允许用 Z / 方向键 / ⌘ 进行精确选择</string>
 		<key>After Area Crop, show</key>
 		<string>区域截图后显示</string>
 		<key>After screenshot</key>
@@ -678,6 +684,8 @@
 		<string>识别</string>
 		<key>Recognize Text/QR</key>
 		<string>识别文字/二维码</string>
+		<key>Record Shortcut</key>
+		<string>录制快捷键</string>
 		<key>Recording</key>
 		<string>录制</string>
 		<key>Rectangle</key>
@@ -766,6 +774,8 @@
 		<string>截图上传失败</string>
 		<key>Screenshots folder</key>
 		<string>截图文件夹</string>
+		<key>Screenshots never leave the computer unless you upload them to the cloud.</key>
+		<string>除非你将截图上传到云端，否则截图永远不会离开你的电脑。</string>
 		<key>Screenshots that you save</key>
 		<string>你保存的截图</string>
 		<key>Scrolling (Up)</key>
@@ -898,6 +908,8 @@
 		<string>文字/二维码识别</string>
 		<key>Thai</key>
 		<string>泰语</string>
+		<key>Thank you for activating Shottr!</key>
+		<string>感谢激活 Shottr！</string>
 		<key>Thank you for purchasing</key>
 		<string>感谢购买</string>
 		<key>The image uploaded to your custom storage</key>
@@ -968,6 +980,12 @@
 		<string>越南语</string>
 		<key>Wallpaper</key>
 		<string>壁纸</string>
+		<key>We DO collect: performance metrics, error codes, frequency of feature usage; OS version, screen resolution and internationalization preferences.</key>
+		<string>我们【会】收集：性能指标、错误代码、功能使用频率；操作系统版本、屏幕分辨率与国际化偏好设置。</string>
+		<key>We DO collect: performance metrics, error codes, frequency of feature usage; OS version, screen resolution and internationalization preferences. We DON'T collect: any personal information, IP address, any images or text. Screenshots never leave the computer unless you upload them to the cloud.</key>
+		<string>我们【会】收集：性能指标、错误代码、功能使用频率；操作系统版本、屏幕分辨率与国际化偏好设置。 我们【不会】收集：任何个人信息、IP 地址、任何图像或文字。 除非你将截图上传到云端，否则截图永远不会离开你的电脑。</string>
+		<key>We DON'T collect: any personal information, IP address, any images or text.</key>
+		<string>我们【不会】收集：任何个人信息、IP 地址、任何图像或文字。</string>
 		<key>We got to the bottom of the undo queue for this image. Go to the previous one?</key>
 		<string>已到达该图像撤销队列的末尾，要切换到上一张吗？</string>
 		<key>We got to the top of the redo queue for this image. Go to the next one?</key>
@@ -998,33 +1016,91 @@
 		<string>当前版本：免费版</string>
 		<key>Your tier: Pro</key>
 		<string>当前版本：专业版</string>
+		<key>Your tier: Shottr Basic</key>
+		<string>当前版本：Shottr Basic</string>
 		<key>Zoom with mouse wheel</key>
 		<string>鼠标滚轮缩放</string>
 	</dict>
 	<key>prefix</key>
 	<dict>
+		<key>%A — Weekday (</key>
+		<string>%A — 星期（</string>
+		<key>%B — Month (</key>
+		<string>%B — 月份（</string>
+		<key>%H — Hour, 24h (</key>
+		<string>%H — 24 小时制小时（</string>
+		<key>%I — Hour, 12h (</key>
+		<string>%I — 12 小时制小时（</string>
+		<key>%M — Minute (</key>
+		<string>%M — 分钟（</string>
+		<key>%Q — Quarter (</key>
+		<string>%Q — 季度（</string>
+		<key>%S — Second (</key>
+		<string>%S — 秒（</string>
+		<key>%W — Week num (</key>
+		<string>%W — 周数（</string>
+		<key>%Y — Year (</key>
+		<string>%Y — 年（</string>
+		<key>%a — Weekday (</key>
+		<string>%a — 星期（</string>
+		<key>%b — Month (</key>
+		<string>%b — 月（</string>
+		<key>%j — Day of Year (</key>
+		<string>%j — 一年中的第几天（</string>
+		<key>%m — Month (</key>
+		<string>%m — 月（</string>
+		<key>%n — App name (</key>
+		<string>%n — 应用名称（</string>
+		<key>%t — Timecode (</key>
+		<string>%t — 时间码（</string>
+		<key>%y — Year (</key>
+		<string>%y — 年（</string>
 		<key>Add Capture (</key>
 		<string>新建截图（</string>
+		<key>App name (</key>
+		<string>应用名称（</string>
 		<key>Copy (Esc or </key>
 		<string>复制（Esc 或 </string>
 		<key>Copy as </key>
 		<string>拷贝为 </string>
+		<key>Day of Year (</key>
+		<string>一年中的第几天（</string>
 		<key>Files (</key>
 		<string>文件（</string>
 		<key>Floating Pin (</key>
 		<string>浮动钉图（</string>
 		<key>Go to System Settings </key>
 		<string>前往系统设置 </string>
+		<key>Hour, 12h (</key>
+		<string>12 小时制小时（</string>
+		<key>Hour, 24h (</key>
+		<string>24 小时制小时（</string>
+		<key>Minute (</key>
+		<string>分钟（</string>
+		<key>Month (</key>
+		<string>月（</string>
 		<key>Paste Image (</key>
 		<string>粘贴图像（</string>
+		<key>Quarter (</key>
+		<string>季度（</string>
 		<key>Save (</key>
 		<string>保存（</string>
+		<key>Second (</key>
+		<string>秒（</string>
 		<key>Test Fai</key>
 		<string>测试失败</string>
+		<key>Timecode (</key>
+		<string>时间码（</string>
 		<key>Upload and Get Link (</key>
 		<string>上传并获取链接（</string>
 		<key>Upload f</key>
 		<string>上传失败</string>
+		<key>Week num (</key>
+		<string>周数（</string>
+		<key>Weekday (</key>
+		<string>星期（</string>
+		<key>Year (</key>
+		<string>年（</string>
 	</dict>
 </dict>
 </plist>
