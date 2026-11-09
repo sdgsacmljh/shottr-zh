@@ -438,7 +438,7 @@ EXACT = {
     'Custom Notification': '自定义通知',
     'System Notification': '系统通知',
     'None': '无',
-    'URL Scheme API': 'URL Scheme API',
+    'URL Scheme API': 'URL Scheme 接口',
     'Enable deep links': '启用深层链接',
     'Diagnostics information': '诊断信息',
     'Allow collection': '允许收集',
@@ -602,6 +602,8 @@ EXACT = {
     # --- 高级选择器说明（NSTextField 富文本，随选择动态刷新）---
     'Advanced selector freezes the screen, enables floating lens, and allows Z/Arrows/Cmd for precise selection': '高级选择器会冻结屏幕、启用浮动放大镜，并允许用 Z / 方向键 / ⌘ 进行精确选择',
     # --- 隐私声明（单字段多行，U+2028 行分隔符；同时兜底独立行）---
+    'We DO collect: performance metrics, error codes, frequency of feature usage; OS version, screen resolution and internationalization preferences.\nWe DON\'T collect: any personal information, IP address, any images or text.\u2028Screenshots never leave the computer unless you upload them to the cloud.': '我们【会】收集：性能指标、错误代码、功能使用频率；操作系统版本、屏幕分辨率与国际化偏好设置。\n我们【不会】收集：任何个人信息、IP 地址、任何图像或文字。\u2028除非你将截图上传到云端，否则截图永远不会离开你的电脑。',
+    # 兜底：若运行时把 \n 归一化为 U+2028
     'We DO collect: performance metrics, error codes, frequency of feature usage; OS version, screen resolution and internationalization preferences.\u2028We DON\'T collect: any personal information, IP address, any images or text.\u2028Screenshots never leave the computer unless you upload them to the cloud.': '我们【会】收集：性能指标、错误代码、功能使用频率；操作系统版本、屏幕分辨率与国际化偏好设置。\u2028我们【不会】收集：任何个人信息、IP 地址、任何图像或文字。\u2028除非你将截图上传到云端，否则截图永远不会离开你的电脑。',
     'We DO collect: performance metrics, error codes, frequency of feature usage; OS version, screen resolution and internationalization preferences.': '我们【会】收集：性能指标、错误代码、功能使用频率；操作系统版本、屏幕分辨率与国际化偏好设置。',
     'We DON\'T collect: any personal information, IP address, any images or text.': '我们【不会】收集：任何个人信息、IP 地址、任何图像或文字。',

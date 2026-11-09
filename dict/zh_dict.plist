@@ -945,7 +945,7 @@
 		<key>U.S. English</key>
 		<string>英语（美国）</string>
 		<key>URL Scheme API</key>
-		<string>URL Scheme API</string>
+		<string>URL Scheme 接口</string>
 		<key>URL copied to the clipboard</key>
 		<string>网址已拷贝到剪贴板</string>
 		<key>Ukrainian</key>
@@ -988,6 +988,10 @@
 		<string>壁纸</string>
 		<key>We DO collect: performance metrics, error codes, frequency of feature usage; OS version, screen resolution and internationalization preferences.</key>
 		<string>我们【会】收集：性能指标、错误代码、功能使用频率；操作系统版本、屏幕分辨率与国际化偏好设置。</string>
+		<key>We DO collect: performance metrics, error codes, frequency of feature usage; OS version, screen resolution and internationalization preferences.
+We DON'T collect: any personal information, IP address, any images or text. Screenshots never leave the computer unless you upload them to the cloud.</key>
+		<string>我们【会】收集：性能指标、错误代码、功能使用频率；操作系统版本、屏幕分辨率与国际化偏好设置。
+我们【不会】收集：任何个人信息、IP 地址、任何图像或文字。 除非你将截图上传到云端，否则截图永远不会离开你的电脑。</string>
 		<key>We DO collect: performance metrics, error codes, frequency of feature usage; OS version, screen resolution and internationalization preferences. We DON'T collect: any personal information, IP address, any images or text. Screenshots never leave the computer unless you upload them to the cloud.</key>
 		<string>我们【会】收集：性能指标、错误代码、功能使用频率；操作系统版本、屏幕分辨率与国际化偏好设置。 我们【不会】收集：任何个人信息、IP 地址、任何图像或文字。 除非你将截图上传到云端，否则截图永远不会离开你的电脑。</string>
 		<key>We DON'T collect: any personal information, IP address, any images or text.</key>
