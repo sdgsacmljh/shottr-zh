@@ -16,8 +16,8 @@
 		<string>2. 选择"截图"，取消勾选系统快捷键</string>
 		<key>3. Put ⌘⇧3 into Fullscreen and ⌘⇧4 into Area fields below</key>
 		<string>3. 将 ⌘⇧3 填入下方"全屏"栏，⌘⇧4 填入"区域"栏</string>
-		<key>3. Put ⌘⌥3 into Fullscreen and ⌘⌥4 into Area fields below</key>
-		<string>3. 将 ⌘⌥3 填入下方“全屏”栏，⌘⌥4 填入“区域”栏</string>
+		<key>3. Put ⌘⇧3 into Fullscreen and ⌘⇧4 into Area fields below </key>
+		<string>3. 将 ⌘⇧3 填入下方“全屏”栏，⌘⇧4 填入“区域”栏</string>
 		<key>30 days</key>
 		<string>30 天</string>
 		<key>7 days</key>

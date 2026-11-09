@@ -623,8 +623,8 @@ EXACT = {
     'Floating magnifier': '浮动放大镜',
     'Show lens': '显示镜头',
     'px': '像素',
-    # 快捷键分配步骤：1.10.0 改用 ⌘⌥（Option）而非 ⌘⇧（Shift）
-    '3. Put ⌘⌥3 into Fullscreen and ⌘⌥4 into Area fields below': '3. 将 ⌘⌥3 填入下方“全屏”栏，⌘⌥4 填入“区域”栏',
+    # 快捷键分配步骤：真实 nib 串为 ⌘⇧（Shift）且末尾带一个空格；含尾空格 key 主匹配，第 384 行无空格版兜底
+    '3. Put ⌘⇧3 into Fullscreen and ⌘⇧4 into Area fields below ': '3. 将 ⌘⇧3 填入下方“全屏”栏，⌘⇧4 填入“区域”栏',
 }
 
 PREFIX = {
