@@ -609,6 +609,13 @@ EXACT = {
     # --- 文件名模板格式符（无动态示例的行）---
     '%p \u2014 AM/PM': '%p \u2014 上午/下午',
     '%d \u2014 Day of month': '%d \u2014 一个月中的某天',
+    # ===== 第七轮：欢迎窗口 + Area selector / Legacy =====
+    'Welcome to shottr': '欢迎使用 shottr',
+    'A tiny screenshot utility that': '一款轻量的截图小工具',
+    'lives in your menu bar': '常驻于你的菜单栏',
+    'click me': '点我',
+    'Area selector': '区域选择器',
+    'Legacy': '传统模式',
 }
 
 PREFIX = {
@@ -654,6 +661,8 @@ PREFIX = {
     '%I \u2014 Hour, 12h (': '%I \u2014 12 小时制小时（',
     '%t \u2014 Timecode (': '%t \u2014 时间码（',
     '%n \u2014 App name (': '%n \u2014 应用名称（',
+    # 欢迎窗口标题可能为「Welcome to 」+ 品牌色字段的分体写法
+    'Welcome to ': '欢迎使用 ',
 }
 
 def main():

@@ -20,6 +20,8 @@
 		<string>30 天</string>
 		<key>7 days</key>
 		<string>7 天</string>
+		<key>A tiny screenshot utility that</key>
+		<string>一款轻量的截图小工具</string>
 		<key>About</key>
 		<string>关于</string>
 		<key>Accept</key>
@@ -80,6 +82,8 @@
 		<string>区域截图</string>
 		<key>Area screenshot</key>
 		<string>区域截图</string>
+		<key>Area selector</key>
+		<string>区域选择器</string>
 		<key>Arrow</key>
 		<string>箭头</string>
 		<key>Arrow (A)</key>
@@ -466,6 +470,8 @@
 		<string>开机时启动</string>
 		<key>Learn More</key>
 		<string>了解更多</string>
+		<key>Legacy</key>
+		<string>传统模式</string>
 		<key>Library</key>
 		<string>截图库</string>
 		<key>License</key>
@@ -990,6 +996,8 @@
 		<string>已到达该图像撤销队列的末尾，要切换到上一张吗？</string>
 		<key>We got to the top of the redo queue for this image. Go to the next one?</key>
 		<string>已到达该图像重做队列的开头，要切换到下一张吗？</string>
+		<key>Welcome to shottr</key>
+		<string>欢迎使用 shottr</string>
 		<key>When you purchase the app, I get to end my work day 5 minutes earlier. No kidding.</key>
 		<string>购买此应用后，我每天就能提前 5 分钟下班。不骗你。</string>
 		<key>Width</key>
@@ -1020,6 +1028,10 @@
 		<string>当前版本：Shottr Basic</string>
 		<key>Zoom with mouse wheel</key>
 		<string>鼠标滚轮缩放</string>
+		<key>click me</key>
+		<string>点我</string>
+		<key>lives in your menu bar</key>
+		<string>常驻于你的菜单栏</string>
 	</dict>
 	<key>prefix</key>
 	<dict>
@@ -1099,6 +1111,8 @@
 		<string>周数（</string>
 		<key>Weekday (</key>
 		<string>星期（</string>
+		<key>Welcome to </key>
+		<string>欢迎使用 </string>
 		<key>Year (</key>
 		<string>年（</string>
 	</dict>
