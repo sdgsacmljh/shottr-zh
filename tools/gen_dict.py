@@ -600,7 +600,7 @@ EXACT = {
     'Your tier: Shottr Basic': '当前版本：Shottr Basic',
     'Record Shortcut': '录制快捷键',
     # --- 高级选择器说明（NSTextField 富文本，随选择动态刷新）---
-    'Advanced selector freezes the screen, enables floating lens, and allows Z/Arrows/Cmd for precise selection': '高级选择器会冻结屏幕、启用浮动放大镜，并允许用 Z / 方向键 / ⌘ 进行精确选择',
+    'Advanced selector freezes the screen, enables floating lens, and allows \nZ/Arrows/Cmd for precise selection': '高级选择器会冻结屏幕、启用浮动放大镜，并允许用 Z / 方向键 / ⌘ 进行精确选择',
     # --- 隐私声明（单字段多行，U+2028 行分隔符；同时兜底独立行）---
     'We DO collect: performance metrics, error codes, frequency of feature usage; OS version, screen resolution and internationalization preferences.\nWe DON\'T collect: any personal information, IP address, any images or text.\u2028Screenshots never leave the computer unless you upload them to the cloud.': '我们【会】收集：性能指标、错误代码、功能使用频率；操作系统版本、屏幕分辨率与国际化偏好设置。\n我们【不会】收集：任何个人信息、IP 地址、任何图像或文字。\u2028除非你将截图上传到云端，否则截图永远不会离开你的电脑。',
     # 兜底：若运行时把 \n 归一化为 U+2028
@@ -618,6 +618,13 @@ EXACT = {
     'click me': '点我',
     'Area selector': '区域选择器',
     'Legacy': '传统模式',
+    # ===== 第八轮：高级页 / 快捷键步骤遗漏（用户第三轮截图）=====
+    # advanced selector 说明真实字符串在 allows 与 Z/Arrows 之间含换行 \n（此前误写成空格导致不命中）
+    'Floating magnifier': '浮动放大镜',
+    'Show lens': '显示镜头',
+    'px': '像素',
+    # 快捷键分配步骤：1.10.0 改用 ⌘⌥（Option）而非 ⌘⇧（Shift）
+    '3. Put ⌘⌥3 into Fullscreen and ⌘⌥4 into Area fields below': '3. 将 ⌘⌥3 填入下方“全屏”栏，⌘⌥4 填入“区域”栏',
 }
 
 PREFIX = {

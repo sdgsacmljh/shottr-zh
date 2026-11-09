@@ -16,6 +16,8 @@
 		<string>2. 选择"截图"，取消勾选系统快捷键</string>
 		<key>3. Put ⌘⇧3 into Fullscreen and ⌘⇧4 into Area fields below</key>
 		<string>3. 将 ⌘⇧3 填入下方"全屏"栏，⌘⇧4 填入"区域"栏</string>
+		<key>3. Put ⌘⌥3 into Fullscreen and ⌘⌥4 into Area fields below</key>
+		<string>3. 将 ⌘⌥3 填入下方“全屏”栏，⌘⌥4 填入“区域”栏</string>
 		<key>30 days</key>
 		<string>30 天</string>
 		<key>7 days</key>
@@ -52,7 +54,8 @@
 		<string>添加截图需先激活许可证。</string>
 		<key>Advanced</key>
 		<string>高级</string>
-		<key>Advanced selector freezes the screen, enables floating lens, and allows Z/Arrows/Cmd for precise selection</key>
+		<key>Advanced selector freezes the screen, enables floating lens, and allows 
+Z/Arrows/Cmd for precise selection</key>
 		<string>高级选择器会冻结屏幕、启用浮动放大镜，并允许用 Z / 方向键 / ⌘ 进行精确选择</string>
 		<key>After Area Crop, show</key>
 		<string>区域截图后显示</string>
@@ -326,6 +329,8 @@
 		<string>浮动钉图</string>
 		<key>Floating Pin (⌘P)</key>
 		<string>浮动钉图（⌘P)</string>
+		<key>Floating magnifier</key>
+		<string>浮动放大镜</string>
 		<key>Folder</key>
 		<string>文件夹</string>
 		<key>Follow on Twitter</key>
@@ -854,6 +859,8 @@
 		<string>显示 Shottr</string>
 		<key>Show Size in Logical Points</key>
 		<string>以逻辑点显示尺寸</string>
+		<key>Show lens</key>
+		<string>显示镜头</string>
 		<key>Show mouse cursor</key>
 		<string>显示鼠标指针</string>
 		<key>Singapore English</key>
@@ -1036,6 +1043,8 @@ We DON'T collect: any personal information, IP address, any images or text. Sc
 		<string>点我</string>
 		<key>lives in your menu bar</key>
 		<string>常驻于你的菜单栏</string>
+		<key>px</key>
+		<string>像素</string>
 	</dict>
 	<key>prefix</key>
 	<dict>
