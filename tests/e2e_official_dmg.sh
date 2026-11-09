@@ -2,7 +2,7 @@
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-SHOTTR_DMG_URL="https://shottr.cc/dl/Shottr-1.9.1.dmg"
+SHOTTR_DMG_URL="https://shottr.cc/dl/Shottr-1.10.0.dmg"
 TMP_ROOT="$(mktemp -d)"
 MOUNT_POINT="$TMP_ROOT/mount"
 APP_PATH="$TMP_ROOT/consumer install/Shottr Test.app"
@@ -16,12 +16,12 @@ cleanup() {
 trap cleanup EXIT
 
 mkdir -p "$MOUNT_POINT" "$(dirname "$APP_PATH")" "$BACKUP_DIR"
-curl -fsSL "$SHOTTR_DMG_URL" -o "$TMP_ROOT/Shottr-1.9.1.dmg"
-hdiutil attach -readonly -nobrowse -mountpoint "$MOUNT_POINT" "$TMP_ROOT/Shottr-1.9.1.dmg" >/dev/null
+curl -fsSL "$SHOTTR_DMG_URL" -o "$TMP_ROOT/Shottr-1.10.0.dmg"
+hdiutil attach -readonly -nobrowse -mountpoint "$MOUNT_POINT" "$TMP_ROOT/Shottr-1.10.0.dmg" >/dev/null
 
 SOURCE_APP="$MOUNT_POINT/Shottr.app"
-[ "$(plutil -extract CFBundleShortVersionString raw -o - "$SOURCE_APP/Contents/Info.plist")" = "1.9.1" ]
-[ "$(plutil -extract CFBundleVersion raw -o - "$SOURCE_APP/Contents/Info.plist")" = "128" ]
+[ "$(plutil -extract CFBundleShortVersionString raw -o - "$SOURCE_APP/Contents/Info.plist")" = "1.10.0" ]
+[ "$(plutil -extract CFBundleVersion raw -o - "$SOURCE_APP/Contents/Info.plist")" = "152" ]
 codesign --verify --deep --strict "$SOURCE_APP"
 spctl --assess --type execute "$SOURCE_APP"
 

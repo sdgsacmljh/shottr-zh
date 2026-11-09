@@ -1,13 +1,13 @@
 #!/bin/bash
 #
 # shottr-zh — Shottr 一键汉化安装器
-# 支持：Shottr 1.9.1 (build 128)，macOS 15+，Intel / Apple Silicon
+# 支持：Shottr 1.10.0 (build 152)，macOS 15+，Intel / Apple Silicon
 #
 set -euo pipefail
 
 REPO_URL="${REPO_URL:-https://github.com/sdgsacmljh/shottr-zh.git}"
-SUPPORTED_VERSION="1.9.1"
-SUPPORTED_BUILD="128"
+SUPPORTED_VERSION="1.10.0"
+SUPPORTED_BUILD="152"
 MIN_MACOS_MAJOR=15
 BUNDLE_ID="cc.ffitch.shottr"
 SHOTTR_TEAM_ID="2Y683PRQWN"
@@ -88,7 +88,7 @@ restore_app() {
   rm -f "$APP_PATH/Contents/Resources/zh_dict.plist"
   rm -f "$APP_PATH/Contents/Resources/shottr_zh_backup_id"
   if [ ! -d "$backup/Contents/Frameworks" ]; then
-    rmdir "$APP_PATH/Contents/Frameworks" >/dev/null 2>&1 || true
+    rm -rf "$APP_PATH/Contents/Frameworks" >/dev/null 2>&1 || true
   fi
 }
 

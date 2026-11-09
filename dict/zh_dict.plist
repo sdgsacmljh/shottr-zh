@@ -50,8 +50,12 @@
 		<string>区域截图后显示</string>
 		<key>After screenshot</key>
 		<string>截图后</string>
+		<key>Allow Overwriting Same Screenshot</key>
+		<string>允许覆盖相同截图</string>
 		<key>Allow collection</key>
 		<string>允许收集</string>
+		<key>Always Capture Cursor</key>
+		<string>始终截取光标</string>
 		<key>Always on top</key>
 		<string>始终置顶</string>
 		<key>Amazon (AWS)</key>
@@ -130,6 +134,8 @@
 		<string>截取选区</string>
 		<key>Capture Window</key>
 		<string>截取窗口</string>
+		<key>Capture timed out</key>
+		<string>截图超时</string>
 		<key>Change</key>
 		<string>更改</string>
 		<key>Checking</key>
@@ -196,6 +202,10 @@
 		<string>自定义</string>
 		<key>Custom Notification</key>
 		<string>自定义通知</string>
+		<key>Custom Typeface</key>
+		<string>自定义字体</string>
+		<key>Custom Uploading Endpoint</key>
+		<string>自定义上传端点</string>
 		<key>Cut</key>
 		<string>剪切</string>
 		<key>Cyrillic</key>
@@ -216,8 +226,14 @@
 		<string>默认缩放级别</string>
 		<key>Delayed Screenshot (3s)</key>
 		<string>延时截图（3秒）</string>
+		<key>Delayed Screenshot Delay</key>
+		<string>延时截图延迟</string>
 		<key>Delete</key>
 		<string>删除</string>
+		<key>Depth</key>
+		<string>深度</string>
+		<key>Desktop Picture</key>
+		<string>桌面图片</string>
 		<key>Deutsch</key>
 		<string>德语</string>
 		<key>Diagnostics information</key>
@@ -230,6 +246,8 @@
 		<string>禁用</string>
 		<key>Disable Uploading</key>
 		<string>禁用上传</string>
+		<key>Document</key>
+		<string>文稿</string>
 		<key>Don't Generate URL</key>
 		<string>不生成 URL</string>
 		<key>Don't show splash</key>
@@ -280,6 +298,8 @@
 		<string>实验性功能仅向会员用户开放。</string>
 		<key>Explore hidden features</key>
 		<string>探索隐藏功能</string>
+		<key>Failed S3 uploading</key>
+		<string>S3 上传失败</string>
 		<key>File Writing Error</key>
 		<string>文件写入错误</string>
 		<key>File uploaded successfully</key>
@@ -290,6 +310,8 @@
 		<string>文件</string>
 		<key>Finishing indexing</key>
 		<string>索引即将完成</string>
+		<key>Finnish</key>
+		<string>芬兰语</string>
 		<key>Floating Pin</key>
 		<string>浮动钉图</string>
 		<key>Floating Pin (⌘P)</key>
@@ -300,6 +322,8 @@
 		<string>关注官方 Twitter</string>
 		<key>Font</key>
 		<string>字体</string>
+		<key>Force JPEG on Save</key>
+		<string>保存时强制 JPEG</string>
 		<key>Forever</key>
 		<string>永久</string>
 		<key>Forget</key>
@@ -312,6 +336,8 @@
 		<string>自由绘制 (D)</string>
 		<key>French</key>
 		<string>法语</string>
+		<key>Fullscreen Based on Cursor</key>
+		<string>全屏基于光标</string>
 		<key>Fullscreen Screenshot</key>
 		<string>全屏截图</string>
 		<key>Gaeilge</key>
@@ -326,16 +352,28 @@
 		<string>德语</string>
 		<key>Get a Token</key>
 		<string>获取 Token</string>
+		<key>Go to next image?</key>
+		<string>前往下一张图像？</string>
 		<key>Got  it!</key>
 		<string>明白了！</string>
 		<key>Gradient Backdrop is only available after the license activation.</key>
 		<string>渐变背景需先激活许可证。</string>
+		<key>HTTPS URL to send file to instead of Shottr Cloud. Leave empty to use Shottr Cloud.</key>
+		<string>用于发送文件的 HTTPS 地址，留空则使用 Shottr 云。</string>
 		<key>Height</key>
 		<string>高度</string>
 		<key>Hi! I'm the world's most annoying salesperson. Do you want to buy Shottr?</key>
 		<string>嗨！我是世界上最烦人的销售。你想购买 Shottr 吗？</string>
 		<key>Hi! I’m the world’s most annoying salesperson. Do you want to buy Shottr?</key>
 		<string>嗨！我是世界上最烦人的销售。你想购买 Shottr 吗？</string>
+		<key>Hide Copy from Toolbar</key>
+		<string>在工具栏隐藏拷贝</string>
+		<key>Hide Pin from Toolbar</key>
+		<string>在工具栏隐藏钉图</string>
+		<key>Hide Save from Toolbar</key>
+		<string>在工具栏隐藏保存</string>
+		<key>Hide Upload from Toolbar</key>
+		<string>在工具栏隐藏上传</string>
 		<key>Hide menubar icon</key>
 		<string>隐藏菜单栏图标</string>
 		<key>Hide preview thumbnail</key>
@@ -344,6 +382,8 @@
 		<string>荧光笔</string>
 		<key>Highlighter (H)</key>
 		<string>荧光笔 (H)</string>
+		<key>Hindi</key>
+		<string>印地语</string>
 		<key>Hit Enter to crop</key>
 		<string>按回车键裁剪</string>
 		<key>Hold a ⓵ or ⓶ key, or an arrow key, and move your mouse over the area which you want to measure</key>
@@ -458,6 +498,8 @@
 		<string>手动滚动截图</string>
 		<key>Manually (close button)</key>
 		<string>手动（关闭按钮）</string>
+		<key>Marathi</key>
+		<string>马拉地语</string>
 		<key>Marker</key>
 		<string>标记</string>
 		<key>Maybe Later</key>
@@ -484,6 +526,8 @@
 		<string>荷兰语</string>
 		<key>Never</key>
 		<string>从不</string>
+		<key>Never Capture Cursor</key>
+		<string>从不截取光标</string>
 		<key>New Zealand English</key>
 		<string>英语（新西兰）</string>
 		<key>Next Time</key>
@@ -510,6 +554,12 @@
 		<string>挪威语（尼诺斯克）</string>
 		<key>Number</key>
 		<string>编号</string>
+		<key>OCR is Not Ready</key>
+		<string>OCR 未就绪</string>
+		<key>OCR is not ready yet</key>
+		<string>OCR 尚未就绪</string>
+		<key>OCR is still running</key>
+		<string>OCR 仍在运行</string>
 		<key>OCR line breaks</key>
 		<string>OCR 换行</string>
 		<key>OK</key>
@@ -562,6 +612,8 @@
 		<string>钉在屏幕上</string>
 		<key>Play sound</key>
 		<string>播放声音</string>
+		<key>Please wait a moment and try again</key>
+		<string>请稍候片刻后重试</string>
 		<key>Polish</key>
 		<string>波兰语</string>
 		<key>Polski</key>
@@ -586,6 +638,8 @@
 		<string>预签名 URL 最长有效期为 7 天</string>
 		<key>Press Shift+Tab to copy the darkest color in the 20px area around the cursor</key>
 		<string>按 Shift+Tab 拷贝光标周围 20px 区域内最深的颜色</string>
+		<key>Previous Capture</key>
+		<string>上一张截图</string>
 		<key>Primary OCR language</key>
 		<string>OCR 主语言</string>
 		<key>Print</key>
@@ -666,6 +720,8 @@
 		<string>恢复</string>
 		<key>Restore License</key>
 		<string>恢复许可证</string>
+		<key>Restore previous image?</key>
+		<string>恢复上一张图像？</string>
 		<key>Reverse scroll direction</key>
 		<string>反转滚动方向</string>
 		<key>Romanian</key>
@@ -848,6 +904,8 @@
 		<string>图像已上传到你的自定义存储</string>
 		<key>Thickness</key>
 		<string>粗细</string>
+		<key>This screenshot's files are gone from the temp folder and can no longer be restored.</key>
+		<string>该截图的文件已从临时文件夹丢失，无法再恢复。</string>
 		<key>Thumbnail</key>
 		<string>缩略图</string>
 		<key>Title</key>
@@ -856,6 +914,8 @@
 		<string>要上传图像到 Shottr 云，需要一个安全令牌，可将其视为访问你上传内容的密钥。</string>
 		<key>Token</key>
 		<string>令牌</string>
+		<key>Toolbar Instruments Order</key>
+		<string>工具栏工具顺序</string>
 		<key>Transparent</key>
 		<string>透明</string>
 		<key>Transparent Background</key>
@@ -908,6 +968,10 @@
 		<string>越南语</string>
 		<key>Wallpaper</key>
 		<string>壁纸</string>
+		<key>We got to the bottom of the undo queue for this image. Go to the previous one?</key>
+		<string>已到达该图像撤销队列的末尾，要切换到上一张吗？</string>
+		<key>We got to the top of the redo queue for this image. Go to the next one?</key>
+		<string>已到达该图像重做队列的开头，要切换到下一张吗？</string>
 		<key>When you purchase the app, I get to end my work day 5 minutes earlier. No kidding.</key>
 		<string>购买此应用后，我每天就能提前 5 分钟下班。不骗你。</string>
 		<key>Width</key>

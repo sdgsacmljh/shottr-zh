@@ -554,6 +554,46 @@ EXACT = {
     'Polish': '波兰语',
     'Romanian': '罗马尼亚语',
     'Swedish': '瑞典语',
+    # ===== 第五轮：1.10.0 新增界面字符串 =====
+    # --- 光标 / 截图行为 ---
+    'Always Capture Cursor': '始终截取光标',
+    'Never Capture Cursor': '从不截取光标',
+    'Allow Overwriting Same Screenshot': '允许覆盖相同截图',
+    'Fullscreen Based on Cursor': '全屏基于光标',
+    'Previous Capture': '上一张截图',
+    'Capture timed out': '截图超时',
+    'Force JPEG on Save': '保存时强制 JPEG',
+    # --- 编辑器字体 / 背景 ---
+    'Custom Typeface': '自定义字体',
+    'Desktop Picture': '桌面图片',
+    'Depth': '深度',
+    'Document': '文稿',
+    # --- 工具栏显隐 ---
+    'Hide Copy from Toolbar': '在工具栏隐藏拷贝',
+    'Hide Pin from Toolbar': '在工具栏隐藏钉图',
+    'Hide Save from Toolbar': '在工具栏隐藏保存',
+    'Hide Upload from Toolbar': '在工具栏隐藏上传',
+    'Toolbar Instruments Order': '工具栏工具顺序',
+    'Delayed Screenshot Delay': '延时截图延迟',
+    # --- 语言（界面 / OCR）---
+    'Finnish': '芬兰语',
+    'Hindi': '印地语',
+    'Marathi': '马拉地语',
+    # --- 自定义上传端点 ---
+    'Custom Uploading Endpoint': '自定义上传端点',
+    'HTTPS URL to send file to instead of Shottr Cloud. Leave empty to use Shottr Cloud.': '用于发送文件的 HTTPS 地址，留空则使用 Shottr 云。',
+    'Failed S3 uploading': 'S3 上传失败',
+    # --- OCR 状态 ---
+    'OCR is Not Ready': 'OCR 未就绪',
+    'OCR is not ready yet': 'OCR 尚未就绪',
+    'OCR is still running': 'OCR 仍在运行',
+    # --- 历史 / 撤销提示 ---
+    'Go to next image?': '前往下一张图像？',
+    'Restore previous image?': '恢复上一张图像？',
+    'This screenshot\'s files are gone from the temp folder and can no longer be restored.': '该截图的文件已从临时文件夹丢失，无法再恢复。',
+    'We got to the bottom of the undo queue for this image. Go to the previous one?': '已到达该图像撤销队列的末尾，要切换到上一张吗？',
+    'We got to the top of the redo queue for this image. Go to the next one?': '已到达该图像重做队列的开头，要切换到下一张吗？',
+    'Please wait a moment and try again': '请稍候片刻后重试',
 }
 
 PREFIX = {

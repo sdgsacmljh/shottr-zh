@@ -8,7 +8,7 @@
 
 | 项目 | 支持范围 |
 |---|---|
-| Shottr | **v1.9.1，build 128**（[官方下载](https://shottr.cc/dl/Shottr-1.9.1.dmg)） |
+| Shottr | **v1.10.0，build 152**（[官方下载](https://shottr.cc/dl/Shottr-1.10.0.dmg)） |
 | macOS | **macOS 15 及以上** |
 | Mac | **Intel（x86_64）与 Apple Silicon（arm64）** |
 | 安装位置 | 默认 `/Applications/Shottr.app`，也支持自定义路径 |
@@ -19,7 +19,7 @@ GitHub Actions 每周从 Shottr 官方重新下载 DMG，并在 macOS 15/26、In
 
 ## 使用前准备
 
-1. 安装官方 Shottr v1.9.1 build 128，并拖入“应用程序”文件夹。
+1. 安装官方 Shottr v1.10.0 build 152，并拖入“应用程序”文件夹。
 2. 安装 Xcode 命令行工具（只需一次）：
 
 ```bash
@@ -42,7 +42,7 @@ curl -fsSL https://raw.githubusercontent.com/sdgsacmljh/shottr-zh/main/install.s
 
 安装器会自动完成：
 
-1. 验证这是 Shottr 官方签名并通过 Apple Gatekeeper 的 v1.9.1 build 128。
+1. 验证这是 Shottr 官方签名并通过 Apple Gatekeeper 的 v1.10.0 build 152。
 2. 完整备份整个官方应用到 `~/.shottr-zh/backups`，包括 Developer ID 签名。
 3. 本地编译 arm64 + x86_64 汉化动态库。
 4. 创建缺失的 Frameworks 目录、部署词典并安全注入两个架构。
@@ -69,7 +69,7 @@ curl -fsSL https://raw.githubusercontent.com/sdgsacmljh/shottr-zh/main/uninstall
 
 2026-08-16 之前发布的版本只备份了 Shottr 主二进制，无法恢复整个官方签名。若已安装旧版汉化：
 
-1. 从[官方 DMG](https://shottr.cc/dl/Shottr-1.9.1.dmg)将 Shottr 覆盖复制到“应用程序”；
+1. 从[官方 DMG](https://shottr.cc/dl/Shottr-1.10.0.dmg)将 Shottr 覆盖复制到“应用程序”；
 2. 确认官方英文版可以启动；
 3. 再运行上面的一键安装命令。
 
@@ -79,7 +79,7 @@ curl -fsSL https://raw.githubusercontent.com/sdgsacmljh/shottr-zh/main/uninstall
 
 Shottr 的界面字符串主要由代码生成，传统 `Localizable.strings` 无法覆盖。本项目在主程序的 Mach-O load-command 填充区写入 `LC_LOAD_DYLIB`，加载本地编译的翻译库。注入过程不会移动节区数据，也不会改变注入时的文件长度。
 
-动态库通过 Objective-C method swizzle 翻译 AppKit 控件、菜单、窗口和通知文本，并遍历视图树处理 nib 直接解码的内容。当前词典包含 466 条精确匹配和 11 条前缀规则；未命中的文本记录到 `~/Library/Logs/shottr_zh.log`。
+动态库通过 Objective-C method swizzle 翻译 AppKit 控件、菜单、窗口和通知文本，并遍历视图树处理 nib 直接解码的内容。当前词典包含 498 条精确匹配和 11 条前缀规则；未命中的文本记录到 `~/Library/Logs/shottr_zh.log`。
 
 ## 开发与验证
 
