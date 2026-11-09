@@ -67,6 +67,19 @@ grep -Fwq x86_64 <<<"$DYLIB_ARCHS"
 DYLIB_BUILD="$(vtool -show-build "$DYLIB")"
 grep -Fq 'minos 15.0' <<<"$DYLIB_BUILD"
 codesign --verify --deep --strict "$APP_PATH"
+
+# 关键回归门禁：重签后必须包含关闭库校验的授权，否则 ad-hoc 汉化库会在启动时被
+# dyld 以 “different Team IDs” 拒绝，导致应用启动崩溃（见 issue 1.10.0 启动崩溃）。
+ENT_DUMP="$(codesign -d --entitlements - "$APP_PATH" 2>/dev/null || true)"
+if ! grep -Fq 'com.apple.security.cs.disable-library-validation' <<<"$ENT_DUMP"; then
+  echo "entitlements missing disable-library-validation after install" >&2
+  exit 1
+fi
+if ! grep -Fq 'com.apple.security.cs.allow-unsigned-executable-memory' <<<"$ENT_DUMP"; then
+  echo "entitlements missing allow-unsigned-executable-memory after install" >&2
+  exit 1
+fi
+
 if xattr -p com.apple.quarantine "$APP_PATH" >/dev/null 2>&1; then
   echo "quarantine attribute was not cleared" >&2
   exit 1
