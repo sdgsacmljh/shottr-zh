@@ -118,6 +118,37 @@ static void swizzleClassMethod(Class c, SEL o, SEL n) {
 
 @implementation NSTextView (TZ)
 - (void)tz_setString:(NSString *)s { [self tz_setString:tz(s)]; }
+- (void)tz_setAttributedString:(NSAttributedString *)a {
+    if (a && a.length) {
+        NSDictionary *attrs = [a attributesAtIndex:0 effectiveRange:nil];
+        a = [[NSAttributedString alloc] initWithString:tz(a.string) attributes:attrs];
+    }
+    [self tz_setAttributedString:a];
+}
+@end
+
+#pragma mark - NSCell（控件底层单元格：兜底自定义子类绕过 setStringValue / 直接操作 cell 的情况）
+
+@implementation NSCell (TZ)
+- (void)tz_setStringValue:(NSString *)s {
+    if ([s isKindOfClass:[NSString class]] && s.length) s = tz(s);
+    [self tz_setStringValue:s];
+}
+- (void)tz_setTitle:(NSString *)title {
+    if ([title isKindOfClass:[NSString class]] && title.length) title = tz(title);
+    [self tz_setTitle:title];
+}
+- (void)tz_setAttributedTitle:(NSAttributedString *)a {
+    if (a && a.length) {
+        NSDictionary *attrs = [a attributesAtIndex:0 effectiveRange:nil];
+        a = [[NSAttributedString alloc] initWithString:tz(a.string) attributes:attrs];
+    }
+    [self tz_setAttributedTitle:a];
+}
+- (void)tz_setObjectValue:(id)obj {
+    if ([obj isKindOfClass:[NSString class]] && [(NSString *)obj length]) obj = tz(obj);
+    [self tz_setObjectValue:obj];
+}
 @end
 
 #pragma mark - NSBundle（NSLocalizedString 路径，覆盖第三方框架本地化字符串）
@@ -309,6 +340,11 @@ static void tz_init(void) {
         swizzle([NSControl class], @selector(setStringValue:), @selector(tz_setStringValue:));
         swizzle([NSTextField class], @selector(setAttributedStringValue:), @selector(tz_setAttributedStringValue:));
         swizzle([NSTextView class], @selector(setString:), @selector(tz_setString:));
+        swizzle([NSTextView class], @selector(setAttributedString:), @selector(tz_setAttributedString:));
+        swizzle([NSCell class], @selector(setStringValue:), @selector(tz_setStringValue:));
+        swizzle([NSCell class], @selector(setTitle:), @selector(tz_setTitle:));
+        swizzle([NSCell class], @selector(setAttributedTitle:), @selector(tz_setAttributedTitle:));
+        swizzle([NSCell class], @selector(setObjectValue:), @selector(tz_setObjectValue:));
         swizzle([NSBundle class], @selector(localizedStringForKey:value:table:), @selector(tz_localizedStringForKey:value:table:));
         swizzleClassMethod([NSTextField class], @selector(labelWithString:), @selector(tz_labelWithString:));
         swizzleClassMethod([NSTextField class], @selector(textFieldWithString:), @selector(tz_textFieldWithString:));
