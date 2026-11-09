@@ -36,7 +36,9 @@ static void logMiss(NSString *s) {
     }
 }
 
-static NSString *tz(NSString *s) {
+// 核心查表：log=YES 时未命中计入未翻译日志（供 UI 文本路径）；log=NO 用于
+// NSLocalizedString 等系统/框架路径，避免把海量系统字符串灌进未翻译日志。
+static NSString *tzCore(NSString *s, BOOL log) {
     if (!s || s.length == 0) return s;
     NSString *t = exactDict[s];
     if (t) return t;
@@ -47,9 +49,11 @@ static NSString *tz(NSString *s) {
     }
     t = lowerDict[[s lowercaseString]];
     if (t) return t;
-    logMiss(s);
+    if (log) logMiss(s);
     return s;
 }
+
+static NSString *tz(NSString *s) { return tzCore(s, YES); }
 
 static void swizzle(Class c, SEL o, SEL n) {
     Method m1 = class_getInstanceMethod(c, o);
@@ -95,6 +99,65 @@ static void swizzleClassMethod(Class c, SEL o, SEL n) {
 - (void)tz_setTitle:(NSString *)title { [self tz_setTitle:tz(title)]; }
 - (instancetype)tz_initWithTitle:(NSString *)title target:(id)t action:(SEL)a {
     return [self tz_initWithTitle:tz(title) target:t action:a];
+}
+@end
+
+#pragma mark - NSTextField（富文本标签，偏好设置描述常用）
+
+@implementation NSTextField (TZAttr)
+- (void)tz_setAttributedStringValue:(NSAttributedString *)a {
+    if (a && a.length) {
+        NSDictionary *attrs = [a attributesAtIndex:0 effectiveRange:nil];
+        a = [[NSAttributedString alloc] initWithString:tz(a.string) attributes:attrs];
+    }
+    [self tz_setAttributedStringValue:a];
+}
+@end
+
+#pragma mark - NSTextView（多行标签 / 非编辑文本兜底）
+
+@implementation NSTextView (TZ)
+- (void)tz_setString:(NSString *)s { [self tz_setString:tz(s)]; }
+- (void)tz_setAttributedString:(NSAttributedString *)a {
+    if (a && a.length) {
+        NSDictionary *attrs = [a attributesAtIndex:0 effectiveRange:nil];
+        a = [[NSAttributedString alloc] initWithString:tz(a.string) attributes:attrs];
+    }
+    [self tz_setAttributedString:a];
+}
+@end
+
+#pragma mark - NSCell（控件底层单元格：兜底自定义子类绕过 setStringValue / 直接操作 cell 的情况）
+
+@implementation NSCell (TZ)
+- (void)tz_setStringValue:(NSString *)s {
+    if ([s isKindOfClass:[NSString class]] && s.length) s = tz(s);
+    [self tz_setStringValue:s];
+}
+- (void)tz_setTitle:(NSString *)title {
+    if ([title isKindOfClass:[NSString class]] && title.length) title = tz(title);
+    [self tz_setTitle:title];
+}
+- (void)tz_setAttributedTitle:(NSAttributedString *)a {
+    if (a && a.length) {
+        NSDictionary *attrs = [a attributesAtIndex:0 effectiveRange:nil];
+        a = [[NSAttributedString alloc] initWithString:tz(a.string) attributes:attrs];
+    }
+    [self tz_setAttributedTitle:a];
+}
+- (void)tz_setObjectValue:(id)obj {
+    if ([obj isKindOfClass:[NSString class]] && [(NSString *)obj length]) obj = tz(obj);
+    [self tz_setObjectValue:obj];
+}
+@end
+
+#pragma mark - NSBundle（NSLocalizedString 路径，覆盖第三方框架本地化字符串）
+
+@implementation NSBundle (TZ)
+- (NSString *)tz_localizedStringForKey:(NSString *)key value:(NSString *)value table:(NSString *)table {
+    NSString *orig = [self tz_localizedStringForKey:key value:value table:table];
+    if (!orig || orig.length == 0) return orig;
+    return tzCore(orig, NO);
 }
 @end
 
@@ -209,6 +272,13 @@ static void walkView(NSView *v) {
             if (item.label.length > 0) item.label = tz(item.label);
             walkView(item.view);
         }
+    } else if ([v isKindOfClass:[NSTextView class]]) {
+        NSTextView *tv = (NSTextView *)v;
+        NSString *s = [tv string];
+        if (s.length > 0) {
+            NSString *t = tz(s);
+            if (![t isEqualToString:s]) [tv setString:t];
+        }
     }
     for (NSView *s in [v.subviews copy]) walkView(s);
 }
@@ -268,6 +338,14 @@ static void tz_init(void) {
         swizzle([NSButton class], @selector(setTitle:), @selector(tz_setTitle:));
         swizzle([NSButton class], @selector(initWithTitle:target:action:), @selector(tz_initWithTitle:target:action:));
         swizzle([NSControl class], @selector(setStringValue:), @selector(tz_setStringValue:));
+        swizzle([NSTextField class], @selector(setAttributedStringValue:), @selector(tz_setAttributedStringValue:));
+        swizzle([NSTextView class], @selector(setString:), @selector(tz_setString:));
+        swizzle([NSTextView class], @selector(setAttributedString:), @selector(tz_setAttributedString:));
+        swizzle([NSCell class], @selector(setStringValue:), @selector(tz_setStringValue:));
+        swizzle([NSCell class], @selector(setTitle:), @selector(tz_setTitle:));
+        swizzle([NSCell class], @selector(setAttributedTitle:), @selector(tz_setAttributedTitle:));
+        swizzle([NSCell class], @selector(setObjectValue:), @selector(tz_setObjectValue:));
+        swizzle([NSBundle class], @selector(localizedStringForKey:value:table:), @selector(tz_localizedStringForKey:value:table:));
         swizzleClassMethod([NSTextField class], @selector(labelWithString:), @selector(tz_labelWithString:));
         swizzleClassMethod([NSTextField class], @selector(textFieldWithString:), @selector(tz_textFieldWithString:));
         swizzleClassMethod([NSTextField class], @selector(wrappingLabelWithString:), @selector(tz_wrappingLabelWithString:));

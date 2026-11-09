@@ -4,6 +4,10 @@
 <dict>
 	<key>exact</key>
 	<dict>
+		<key>%d — Day of month</key>
+		<string>%d — 一个月中的某天</string>
+		<key>%p — AM/PM</key>
+		<string>%p — 上午/下午</string>
 		<key>1 day</key>
 		<string>1 天</string>
 		<key>1. Go to System Settings → Keyboard → Keyboard Shortcuts</key>
@@ -12,10 +16,14 @@
 		<string>2. 选择"截图"，取消勾选系统快捷键</string>
 		<key>3. Put ⌘⇧3 into Fullscreen and ⌘⇧4 into Area fields below</key>
 		<string>3. 将 ⌘⇧3 填入下方"全屏"栏，⌘⇧4 填入"区域"栏</string>
+		<key>3. Put ⌘⇧3 into Fullscreen and ⌘⇧4 into Area fields below </key>
+		<string>3. 将 ⌘⇧3 填入下方“全屏”栏，⌘⇧4 填入“区域”栏</string>
 		<key>30 days</key>
 		<string>30 天</string>
 		<key>7 days</key>
 		<string>7 天</string>
+		<key>A tiny screenshot utility that</key>
+		<string>一款轻量的截图小工具</string>
 		<key>About</key>
 		<string>关于</string>
 		<key>Accept</key>
@@ -46,12 +54,19 @@
 		<string>添加截图需先激活许可证。</string>
 		<key>Advanced</key>
 		<string>高级</string>
+		<key>Advanced selector freezes the screen, enables floating lens, and allows 
+Z/Arrows/Cmd for precise selection</key>
+		<string>高级选择器会冻结屏幕、启用浮动放大镜，并允许用 Z / 方向键 / ⌘ 进行精确选择</string>
 		<key>After Area Crop, show</key>
 		<string>区域截图后显示</string>
 		<key>After screenshot</key>
 		<string>截图后</string>
+		<key>Allow Overwriting Same Screenshot</key>
+		<string>允许覆盖相同截图</string>
 		<key>Allow collection</key>
 		<string>允许收集</string>
+		<key>Always Capture Cursor</key>
+		<string>始终截取光标</string>
 		<key>Always on top</key>
 		<string>始终置顶</string>
 		<key>Amazon (AWS)</key>
@@ -70,6 +85,8 @@
 		<string>区域截图</string>
 		<key>Area screenshot</key>
 		<string>区域截图</string>
+		<key>Area selector</key>
+		<string>区域选择器</string>
 		<key>Arrow</key>
 		<string>箭头</string>
 		<key>Arrow (A)</key>
@@ -130,6 +147,8 @@
 		<string>截取选区</string>
 		<key>Capture Window</key>
 		<string>截取窗口</string>
+		<key>Capture timed out</key>
+		<string>截图超时</string>
 		<key>Change</key>
 		<string>更改</string>
 		<key>Checking</key>
@@ -196,6 +215,10 @@
 		<string>自定义</string>
 		<key>Custom Notification</key>
 		<string>自定义通知</string>
+		<key>Custom Typeface</key>
+		<string>自定义字体</string>
+		<key>Custom Uploading Endpoint</key>
+		<string>自定义上传端点</string>
 		<key>Cut</key>
 		<string>剪切</string>
 		<key>Cyrillic</key>
@@ -216,8 +239,14 @@
 		<string>默认缩放级别</string>
 		<key>Delayed Screenshot (3s)</key>
 		<string>延时截图（3秒）</string>
+		<key>Delayed Screenshot Delay</key>
+		<string>延时截图延迟</string>
 		<key>Delete</key>
 		<string>删除</string>
+		<key>Depth</key>
+		<string>深度</string>
+		<key>Desktop Picture</key>
+		<string>桌面图片</string>
 		<key>Deutsch</key>
 		<string>德语</string>
 		<key>Diagnostics information</key>
@@ -230,6 +259,8 @@
 		<string>禁用</string>
 		<key>Disable Uploading</key>
 		<string>禁用上传</string>
+		<key>Document</key>
+		<string>文稿</string>
 		<key>Don't Generate URL</key>
 		<string>不生成 URL</string>
 		<key>Don't show splash</key>
@@ -280,6 +311,8 @@
 		<string>实验性功能仅向会员用户开放。</string>
 		<key>Explore hidden features</key>
 		<string>探索隐藏功能</string>
+		<key>Failed S3 uploading</key>
+		<string>S3 上传失败</string>
 		<key>File Writing Error</key>
 		<string>文件写入错误</string>
 		<key>File uploaded successfully</key>
@@ -290,16 +323,22 @@
 		<string>文件</string>
 		<key>Finishing indexing</key>
 		<string>索引即将完成</string>
+		<key>Finnish</key>
+		<string>芬兰语</string>
 		<key>Floating Pin</key>
 		<string>浮动钉图</string>
 		<key>Floating Pin (⌘P)</key>
 		<string>浮动钉图（⌘P)</string>
+		<key>Floating magnifier</key>
+		<string>浮动放大镜</string>
 		<key>Folder</key>
 		<string>文件夹</string>
 		<key>Follow on Twitter</key>
 		<string>关注官方 Twitter</string>
 		<key>Font</key>
 		<string>字体</string>
+		<key>Force JPEG on Save</key>
+		<string>保存时强制 JPEG</string>
 		<key>Forever</key>
 		<string>永久</string>
 		<key>Forget</key>
@@ -312,6 +351,8 @@
 		<string>自由绘制 (D)</string>
 		<key>French</key>
 		<string>法语</string>
+		<key>Fullscreen Based on Cursor</key>
+		<string>全屏基于光标</string>
 		<key>Fullscreen Screenshot</key>
 		<string>全屏截图</string>
 		<key>Gaeilge</key>
@@ -326,16 +367,28 @@
 		<string>德语</string>
 		<key>Get a Token</key>
 		<string>获取 Token</string>
+		<key>Go to next image?</key>
+		<string>前往下一张图像？</string>
 		<key>Got  it!</key>
 		<string>明白了！</string>
 		<key>Gradient Backdrop is only available after the license activation.</key>
 		<string>渐变背景需先激活许可证。</string>
+		<key>HTTPS URL to send file to instead of Shottr Cloud. Leave empty to use Shottr Cloud.</key>
+		<string>用于发送文件的 HTTPS 地址，留空则使用 Shottr 云。</string>
 		<key>Height</key>
 		<string>高度</string>
 		<key>Hi! I'm the world's most annoying salesperson. Do you want to buy Shottr?</key>
 		<string>嗨！我是世界上最烦人的销售。你想购买 Shottr 吗？</string>
 		<key>Hi! I’m the world’s most annoying salesperson. Do you want to buy Shottr?</key>
 		<string>嗨！我是世界上最烦人的销售。你想购买 Shottr 吗？</string>
+		<key>Hide Copy from Toolbar</key>
+		<string>在工具栏隐藏拷贝</string>
+		<key>Hide Pin from Toolbar</key>
+		<string>在工具栏隐藏钉图</string>
+		<key>Hide Save from Toolbar</key>
+		<string>在工具栏隐藏保存</string>
+		<key>Hide Upload from Toolbar</key>
+		<string>在工具栏隐藏上传</string>
 		<key>Hide menubar icon</key>
 		<string>隐藏菜单栏图标</string>
 		<key>Hide preview thumbnail</key>
@@ -344,6 +397,8 @@
 		<string>荧光笔</string>
 		<key>Highlighter (H)</key>
 		<string>荧光笔 (H)</string>
+		<key>Hindi</key>
+		<string>印地语</string>
 		<key>Hit Enter to crop</key>
 		<string>按回车键裁剪</string>
 		<key>Hold a ⓵ or ⓶ key, or an arrow key, and move your mouse over the area which you want to measure</key>
@@ -420,6 +475,8 @@
 		<string>开机时启动</string>
 		<key>Learn More</key>
 		<string>了解更多</string>
+		<key>Legacy</key>
+		<string>传统模式</string>
 		<key>Library</key>
 		<string>截图库</string>
 		<key>License</key>
@@ -458,6 +515,8 @@
 		<string>手动滚动截图</string>
 		<key>Manually (close button)</key>
 		<string>手动（关闭按钮）</string>
+		<key>Marathi</key>
+		<string>马拉地语</string>
 		<key>Marker</key>
 		<string>标记</string>
 		<key>Maybe Later</key>
@@ -484,6 +543,8 @@
 		<string>荷兰语</string>
 		<key>Never</key>
 		<string>从不</string>
+		<key>Never Capture Cursor</key>
+		<string>从不截取光标</string>
 		<key>New Zealand English</key>
 		<string>英语（新西兰）</string>
 		<key>Next Time</key>
@@ -510,6 +571,12 @@
 		<string>挪威语（尼诺斯克）</string>
 		<key>Number</key>
 		<string>编号</string>
+		<key>OCR is Not Ready</key>
+		<string>OCR 未就绪</string>
+		<key>OCR is not ready yet</key>
+		<string>OCR 尚未就绪</string>
+		<key>OCR is still running</key>
+		<string>OCR 仍在运行</string>
 		<key>OCR line breaks</key>
 		<string>OCR 换行</string>
 		<key>OK</key>
@@ -562,6 +629,8 @@
 		<string>钉在屏幕上</string>
 		<key>Play sound</key>
 		<string>播放声音</string>
+		<key>Please wait a moment and try again</key>
+		<string>请稍候片刻后重试</string>
 		<key>Polish</key>
 		<string>波兰语</string>
 		<key>Polski</key>
@@ -586,6 +655,8 @@
 		<string>预签名 URL 最长有效期为 7 天</string>
 		<key>Press Shift+Tab to copy the darkest color in the 20px area around the cursor</key>
 		<string>按 Shift+Tab 拷贝光标周围 20px 区域内最深的颜色</string>
+		<key>Previous Capture</key>
+		<string>上一张截图</string>
 		<key>Primary OCR language</key>
 		<string>OCR 主语言</string>
 		<key>Print</key>
@@ -624,6 +695,8 @@
 		<string>识别</string>
 		<key>Recognize Text/QR</key>
 		<string>识别文字/二维码</string>
+		<key>Record Shortcut</key>
+		<string>录制快捷键</string>
 		<key>Recording</key>
 		<string>录制</string>
 		<key>Rectangle</key>
@@ -666,6 +739,8 @@
 		<string>恢复</string>
 		<key>Restore License</key>
 		<string>恢复许可证</string>
+		<key>Restore previous image?</key>
+		<string>恢复上一张图像？</string>
 		<key>Reverse scroll direction</key>
 		<string>反转滚动方向</string>
 		<key>Romanian</key>
@@ -710,6 +785,8 @@
 		<string>截图上传失败</string>
 		<key>Screenshots folder</key>
 		<string>截图文件夹</string>
+		<key>Screenshots never leave the computer unless you upload them to the cloud.</key>
+		<string>除非你将截图上传到云端，否则截图永远不会离开你的电脑。</string>
 		<key>Screenshots that you save</key>
 		<string>你保存的截图</string>
 		<key>Scrolling (Up)</key>
@@ -782,6 +859,8 @@
 		<string>显示 Shottr</string>
 		<key>Show Size in Logical Points</key>
 		<string>以逻辑点显示尺寸</string>
+		<key>Show lens</key>
+		<string>显示镜头</string>
 		<key>Show mouse cursor</key>
 		<string>显示鼠标指针</string>
 		<key>Singapore English</key>
@@ -842,12 +921,16 @@
 		<string>文字/二维码识别</string>
 		<key>Thai</key>
 		<string>泰语</string>
+		<key>Thank you for activating Shottr!</key>
+		<string>感谢激活 Shottr！</string>
 		<key>Thank you for purchasing</key>
 		<string>感谢购买</string>
 		<key>The image uploaded to your custom storage</key>
 		<string>图像已上传到你的自定义存储</string>
 		<key>Thickness</key>
 		<string>粗细</string>
+		<key>This screenshot's files are gone from the temp folder and can no longer be restored.</key>
+		<string>该截图的文件已从临时文件夹丢失，无法再恢复。</string>
 		<key>Thumbnail</key>
 		<string>缩略图</string>
 		<key>Title</key>
@@ -856,6 +939,8 @@
 		<string>要上传图像到 Shottr 云，需要一个安全令牌，可将其视为访问你上传内容的密钥。</string>
 		<key>Token</key>
 		<string>令牌</string>
+		<key>Toolbar Instruments Order</key>
+		<string>工具栏工具顺序</string>
 		<key>Transparent</key>
 		<string>透明</string>
 		<key>Transparent Background</key>
@@ -867,7 +952,7 @@
 		<key>U.S. English</key>
 		<string>英语（美国）</string>
 		<key>URL Scheme API</key>
-		<string>URL Scheme API</string>
+		<string>URL Scheme 接口</string>
 		<key>URL copied to the clipboard</key>
 		<string>网址已拷贝到剪贴板</string>
 		<key>Ukrainian</key>
@@ -908,6 +993,22 @@
 		<string>越南语</string>
 		<key>Wallpaper</key>
 		<string>壁纸</string>
+		<key>We DO collect: performance metrics, error codes, frequency of feature usage; OS version, screen resolution and internationalization preferences.</key>
+		<string>我们【会】收集：性能指标、错误代码、功能使用频率；操作系统版本、屏幕分辨率与国际化偏好设置。</string>
+		<key>We DO collect: performance metrics, error codes, frequency of feature usage; OS version, screen resolution and internationalization preferences.
+We DON'T collect: any personal information, IP address, any images or text. Screenshots never leave the computer unless you upload them to the cloud.</key>
+		<string>我们【会】收集：性能指标、错误代码、功能使用频率；操作系统版本、屏幕分辨率与国际化偏好设置。
+我们【不会】收集：任何个人信息、IP 地址、任何图像或文字。 除非你将截图上传到云端，否则截图永远不会离开你的电脑。</string>
+		<key>We DO collect: performance metrics, error codes, frequency of feature usage; OS version, screen resolution and internationalization preferences. We DON'T collect: any personal information, IP address, any images or text. Screenshots never leave the computer unless you upload them to the cloud.</key>
+		<string>我们【会】收集：性能指标、错误代码、功能使用频率；操作系统版本、屏幕分辨率与国际化偏好设置。 我们【不会】收集：任何个人信息、IP 地址、任何图像或文字。 除非你将截图上传到云端，否则截图永远不会离开你的电脑。</string>
+		<key>We DON'T collect: any personal information, IP address, any images or text.</key>
+		<string>我们【不会】收集：任何个人信息、IP 地址、任何图像或文字。</string>
+		<key>We got to the bottom of the undo queue for this image. Go to the previous one?</key>
+		<string>已到达该图像撤销队列的末尾，要切换到上一张吗？</string>
+		<key>We got to the top of the redo queue for this image. Go to the next one?</key>
+		<string>已到达该图像重做队列的开头，要切换到下一张吗？</string>
+		<key>Welcome to shottr</key>
+		<string>欢迎使用 shottr</string>
 		<key>When you purchase the app, I get to end my work day 5 minutes earlier. No kidding.</key>
 		<string>购买此应用后，我每天就能提前 5 分钟下班。不骗你。</string>
 		<key>Width</key>
@@ -934,33 +1035,99 @@
 		<string>当前版本：免费版</string>
 		<key>Your tier: Pro</key>
 		<string>当前版本：专业版</string>
+		<key>Your tier: Shottr Basic</key>
+		<string>当前版本：Shottr Basic</string>
 		<key>Zoom with mouse wheel</key>
 		<string>鼠标滚轮缩放</string>
+		<key>click me</key>
+		<string>点我</string>
+		<key>lives in your menu bar</key>
+		<string>常驻于你的菜单栏</string>
+		<key>px</key>
+		<string>像素</string>
 	</dict>
 	<key>prefix</key>
 	<dict>
+		<key>%A — Weekday (</key>
+		<string>%A — 星期（</string>
+		<key>%B — Month (</key>
+		<string>%B — 月份（</string>
+		<key>%H — Hour, 24h (</key>
+		<string>%H — 24 小时制小时（</string>
+		<key>%I — Hour, 12h (</key>
+		<string>%I — 12 小时制小时（</string>
+		<key>%M — Minute (</key>
+		<string>%M — 分钟（</string>
+		<key>%Q — Quarter (</key>
+		<string>%Q — 季度（</string>
+		<key>%S — Second (</key>
+		<string>%S — 秒（</string>
+		<key>%W — Week num (</key>
+		<string>%W — 周数（</string>
+		<key>%Y — Year (</key>
+		<string>%Y — 年（</string>
+		<key>%a — Weekday (</key>
+		<string>%a — 星期（</string>
+		<key>%b — Month (</key>
+		<string>%b — 月（</string>
+		<key>%j — Day of Year (</key>
+		<string>%j — 一年中的第几天（</string>
+		<key>%m — Month (</key>
+		<string>%m — 月（</string>
+		<key>%n — App name (</key>
+		<string>%n — 应用名称（</string>
+		<key>%t — Timecode (</key>
+		<string>%t — 时间码（</string>
+		<key>%y — Year (</key>
+		<string>%y — 年（</string>
 		<key>Add Capture (</key>
 		<string>新建截图（</string>
+		<key>App name (</key>
+		<string>应用名称（</string>
 		<key>Copy (Esc or </key>
 		<string>复制（Esc 或 </string>
 		<key>Copy as </key>
 		<string>拷贝为 </string>
+		<key>Day of Year (</key>
+		<string>一年中的第几天（</string>
 		<key>Files (</key>
 		<string>文件（</string>
 		<key>Floating Pin (</key>
 		<string>浮动钉图（</string>
 		<key>Go to System Settings </key>
 		<string>前往系统设置 </string>
+		<key>Hour, 12h (</key>
+		<string>12 小时制小时（</string>
+		<key>Hour, 24h (</key>
+		<string>24 小时制小时（</string>
+		<key>Minute (</key>
+		<string>分钟（</string>
+		<key>Month (</key>
+		<string>月（</string>
 		<key>Paste Image (</key>
 		<string>粘贴图像（</string>
+		<key>Quarter (</key>
+		<string>季度（</string>
 		<key>Save (</key>
 		<string>保存（</string>
+		<key>Second (</key>
+		<string>秒（</string>
 		<key>Test Fai</key>
 		<string>测试失败</string>
+		<key>Timecode (</key>
+		<string>时间码（</string>
 		<key>Upload and Get Link (</key>
 		<string>上传并获取链接（</string>
 		<key>Upload f</key>
 		<string>上传失败</string>
+		<key>Week num (</key>
+		<string>周数（</string>
+		<key>Weekday (</key>
+		<string>星期（</string>
+		<key>Welcome to </key>
+		<string>欢迎使用 </string>
+		<key>Year (</key>
+		<string>年（</string>
 	</dict>
 </dict>
 </plist>

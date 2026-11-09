@@ -1,13 +1,13 @@
 #!/bin/bash
 #
 # shottr-zh — Shottr 一键汉化安装器
-# 支持：Shottr 1.9.1 (build 128)，macOS 15+，Intel / Apple Silicon
+# 支持：Shottr 1.10.0 (build 152)，macOS 15+，Intel / Apple Silicon
 #
 set -euo pipefail
 
 REPO_URL="${REPO_URL:-https://github.com/sdgsacmljh/shottr-zh.git}"
-SUPPORTED_VERSION="1.9.1"
-SUPPORTED_BUILD="128"
+SUPPORTED_VERSION="1.10.0"
+SUPPORTED_BUILD="152"
 MIN_MACOS_MAJOR=15
 BUNDLE_ID="cc.ffitch.shottr"
 SHOTTR_TEAM_ID="2Y683PRQWN"
@@ -88,7 +88,7 @@ restore_app() {
   rm -f "$APP_PATH/Contents/Resources/zh_dict.plist"
   rm -f "$APP_PATH/Contents/Resources/shottr_zh_backup_id"
   if [ ! -d "$backup/Contents/Frameworks" ]; then
-    rmdir "$APP_PATH/Contents/Frameworks" >/dev/null 2>&1 || true
+    rm -rf "$APP_PATH/Contents/Frameworks" >/dev/null 2>&1 || true
   fi
 }
 
@@ -209,9 +209,75 @@ python3 "$WORK_DIR/tools/inject_macho.py" "$BIN" \
 
 info "本地重新签名并验证…"
 codesign --force --sign - "$DYLIB" >/dev/null 2>&1 || error "动态库签名失败"
+
+# 提取官方原版授权并追加 disable-library-validation：本地 ad-hoc 重签后，强化运行时
+# 仍按原 designated requirement 校验被加载的汉化库（同为 ad-hoc），会导致 dyld 报
+# “different Team IDs” 并在启动时崩溃。关闭库校验后，ad-hoc 汉化库才能被正常加载。
+ENT_TMP="$(mktemp -t shottr_zh_ent.XXXXXX.plist)"
+if codesign -d --entitlements - "$APP_PATH" 2>/dev/null > "$ENT_TMP.raw" && [ -s "$ENT_TMP.raw" ]; then
+  python3 - "$ENT_TMP.raw" "$ENT_TMP" <<'PY'
+import sys, plistlib, re
+def parse_human(text):
+    lines = text.splitlines(); root = {}
+    stack = [(-1, root, None)]
+    for raw in lines:
+        if not raw.strip(): continue
+        ind = len(raw) - len(raw.lstrip('\t')); c = raw.strip()
+        while len(stack) > 1 and stack[-1][0] > ind: stack.pop()
+        if c == '[Dict]':
+            if len(stack) == 1 and stack[-1][2] is None:
+                stack.append((ind, root, None))
+            else:
+                d = {}; _, cont, key = stack[-1]
+                if isinstance(cont, dict) and key is not None: cont[key] = d
+                elif isinstance(cont, list): cont.append(d)
+                stack.append((ind, d, None))
+        elif c == '[Array]':
+            a = []; _, cont, key = stack[-1]
+            if isinstance(cont, dict) and key is not None: cont[key] = a
+            elif isinstance(cont, list): cont.append(a)
+            stack.append((ind, a, None))
+        elif c.startswith('[Key]'):
+            stack[-1] = (stack[-1][0], stack[-1][1], c[5:].strip())
+        elif c == '[Value]':
+            pass
+        else:
+            m = re.match(r'\[(\w+)\]\s?(.*)', c)
+            if not m: continue
+            typ, data = m.group(1), m.group(2)
+            if typ == 'Bool': v = (data.strip() == 'true')
+            elif typ == 'Int': v = int(data.strip())
+            elif typ == 'Real': v = float(data.strip())
+            else: v = data
+            cont, key = stack[-1][1], stack[-1][2]
+            if isinstance(cont, dict) and key is not None:
+                cont[key] = v; stack[-1] = (stack[-1][0], cont, None)
+            elif isinstance(cont, list): cont.append(v)
+    return root
+try:
+    d = parse_human(open(sys.argv[1]).read())
+except Exception:
+    d = {}
+if not isinstance(d, dict): d = {}
+d['com.apple.security.cs.disable-library-validation'] = True
+d['com.apple.security.cs.allow-unsigned-executable-memory'] = True
+plistlib.dump(d, open(sys.argv[2], 'wb'))
+PY
+else
+  cat > "$ENT_TMP" <<'PLIST'
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>com.apple.security.cs.disable-library-validation</key><true/>
+<key>com.apple.security.cs.allow-unsigned-executable-memory</key><true/>
+</dict></plist>
+PLIST
+fi
 codesign --force --sign - \
-  --preserve-metadata=identifier,entitlements,flags,runtime \
+  --entitlements "$ENT_TMP" \
+  --preserve-metadata=identifier,flags,runtime \
   "$APP_PATH" >/dev/null 2>&1 || error "应用签名失败"
+rm -f "$ENT_TMP" "$ENT_TMP.raw"
 codesign --verify --deep --strict "$APP_PATH" >/dev/null 2>&1 || error "应用签名校验失败"
 
 DYLIB_ARCHS="$(lipo -archs "$DYLIB")"

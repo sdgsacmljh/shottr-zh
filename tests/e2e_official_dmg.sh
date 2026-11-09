@@ -2,7 +2,7 @@
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-SHOTTR_DMG_URL="https://shottr.cc/dl/Shottr-1.9.1.dmg"
+SHOTTR_DMG_URL="https://shottr.cc/dl/Shottr-1.10.0.dmg"
 TMP_ROOT="$(mktemp -d)"
 MOUNT_POINT="$TMP_ROOT/mount"
 APP_PATH="$TMP_ROOT/consumer install/Shottr Test.app"
@@ -16,12 +16,12 @@ cleanup() {
 trap cleanup EXIT
 
 mkdir -p "$MOUNT_POINT" "$(dirname "$APP_PATH")" "$BACKUP_DIR"
-curl -fsSL "$SHOTTR_DMG_URL" -o "$TMP_ROOT/Shottr-1.9.1.dmg"
-hdiutil attach -readonly -nobrowse -mountpoint "$MOUNT_POINT" "$TMP_ROOT/Shottr-1.9.1.dmg" >/dev/null
+curl -fsSL "$SHOTTR_DMG_URL" -o "$TMP_ROOT/Shottr-1.10.0.dmg"
+hdiutil attach -readonly -nobrowse -mountpoint "$MOUNT_POINT" "$TMP_ROOT/Shottr-1.10.0.dmg" >/dev/null
 
 SOURCE_APP="$MOUNT_POINT/Shottr.app"
-[ "$(plutil -extract CFBundleShortVersionString raw -o - "$SOURCE_APP/Contents/Info.plist")" = "1.9.1" ]
-[ "$(plutil -extract CFBundleVersion raw -o - "$SOURCE_APP/Contents/Info.plist")" = "128" ]
+[ "$(plutil -extract CFBundleShortVersionString raw -o - "$SOURCE_APP/Contents/Info.plist")" = "1.10.0" ]
+[ "$(plutil -extract CFBundleVersion raw -o - "$SOURCE_APP/Contents/Info.plist")" = "152" ]
 codesign --verify --deep --strict "$SOURCE_APP"
 spctl --assess --type execute "$SOURCE_APP"
 
@@ -67,6 +67,19 @@ grep -Fwq x86_64 <<<"$DYLIB_ARCHS"
 DYLIB_BUILD="$(vtool -show-build "$DYLIB")"
 grep -Fq 'minos 15.0' <<<"$DYLIB_BUILD"
 codesign --verify --deep --strict "$APP_PATH"
+
+# 关键回归门禁：重签后必须包含关闭库校验的授权，否则 ad-hoc 汉化库会在启动时被
+# dyld 以 “different Team IDs” 拒绝，导致应用启动崩溃（见 issue 1.10.0 启动崩溃）。
+ENT_DUMP="$(codesign -d --entitlements - "$APP_PATH" 2>/dev/null || true)"
+if ! grep -Fq 'com.apple.security.cs.disable-library-validation' <<<"$ENT_DUMP"; then
+  echo "entitlements missing disable-library-validation after install" >&2
+  exit 1
+fi
+if ! grep -Fq 'com.apple.security.cs.allow-unsigned-executable-memory' <<<"$ENT_DUMP"; then
+  echo "entitlements missing allow-unsigned-executable-memory after install" >&2
+  exit 1
+fi
+
 if xattr -p com.apple.quarantine "$APP_PATH" >/dev/null 2>&1; then
   echo "quarantine attribute was not cleared" >&2
   exit 1

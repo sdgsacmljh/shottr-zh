@@ -2,8 +2,8 @@
 # shottr-zh — 一键卸载并恢复完整官方 Shottr
 set -euo pipefail
 
-SUPPORTED_VERSION="1.9.1"
-SUPPORTED_BUILD="128"
+SUPPORTED_VERSION="1.10.0"
+SUPPORTED_BUILD="152"
 BUNDLE_ID="cc.ffitch.shottr"
 SHOTTR_TEAM_ID="2Y683PRQWN"
 APP_PATH="${1:-/Applications/Shottr.app}"
@@ -62,7 +62,7 @@ rm -f "$APP_PATH/Contents/Frameworks/shottr_zh.dylib"
 rm -f "$APP_PATH/Contents/Resources/zh_dict.plist"
 rm -f "$APP_PATH/Contents/Resources/shottr_zh_backup_id"
 if [ ! -d "$BACKUP_APP/Contents/Frameworks" ]; then
-  rmdir "$APP_PATH/Contents/Frameworks" >/dev/null 2>&1 || true
+  rm -rf "$APP_PATH/Contents/Frameworks" >/dev/null 2>&1 || true
 fi
 
 codesign --verify --deep --strict "$APP_PATH" >/dev/null 2>&1 || error "恢复后的官方签名校验失败"
